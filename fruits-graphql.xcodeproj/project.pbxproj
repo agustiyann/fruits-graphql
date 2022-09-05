@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2EB88628C5DDA200548A5C /* repository */,
-				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
+				CF2EB88E28C5E0FF00548A5C /* view */,
 			);
 			path = fruits;
 			sourceTree = "<group>";
@@ -196,6 +196,14 @@
 				CF2EB88C28C5DF5A00548A5C /* ApolloNetwork.swift */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		CF2EB88E28C5E0FF00548A5C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
