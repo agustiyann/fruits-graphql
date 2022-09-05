@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Fruit: Equatable {
+struct FruitModel: Equatable {
     var id: String
     var name: String
     var origin: String
