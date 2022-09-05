@@ -1,8 +1,12 @@
 query FruitList {
   fruits {
-    id
-    fruit_name
-    origin
-    description
+    ...FruitFragment
   }
+}
+
+fragment FruitFragment on Fruits {
+  id
+  fruit_name
+  origin
+  description
 }

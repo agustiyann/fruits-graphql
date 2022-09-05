@@ -11,15 +11,18 @@ public final class FruitListQuery: GraphQLQuery {
     query FruitList {
       fruits {
         __typename
-        id
-        fruit_name
-        origin
-        description
+        ...FruitFragment
       }
     }
     """
 
   public let operationName: String = "FruitList"
+
+  public var queryDocument: String {
+    var document: String = operationDefinition
+    document.append("\n" + FruitFragment.fragmentDefinition)
+    return document
+  }
 
   public init() {
   }
@@ -58,10 +61,7 @@ public final class FruitListQuery: GraphQLQuery {
       public static var selections: [GraphQLSelection] {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
-          GraphQLField("fruit_name", type: .scalar(String.self)),
-          GraphQLField("origin", type: .scalar(String.self)),
-          GraphQLField("description", type: .scalar(String.self)),
+          GraphQLFragmentSpread(FruitFragment.self),
         ]
       }
 
@@ -84,41 +84,112 @@ public final class FruitListQuery: GraphQLQuery {
         }
       }
 
-      public var id: GraphQLID? {
+      public var fragments: Fragments {
         get {
-          return resultMap["id"] as? GraphQLID
+          return Fragments(unsafeResultMap: resultMap)
         }
         set {
-          resultMap.updateValue(newValue, forKey: "id")
+          resultMap += newValue.resultMap
         }
       }
 
-      public var fruitName: String? {
-        get {
-          return resultMap["fruit_name"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "fruit_name")
-        }
-      }
+      public struct Fragments {
+        public private(set) var resultMap: ResultMap
 
-      public var origin: String? {
-        get {
-          return resultMap["origin"] as? String
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
         }
-        set {
-          resultMap.updateValue(newValue, forKey: "origin")
-        }
-      }
 
-      public var description: String? {
-        get {
-          return resultMap["description"] as? String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "description")
+        public var fruitFragment: FruitFragment {
+          get {
+            return FruitFragment(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
         }
       }
+    }
+  }
+}
+
+public struct FruitFragment: GraphQLFragment {
+  /// The raw GraphQL definition of this fragment.
+  public static let fragmentDefinition: String =
+    """
+    fragment FruitFragment on Fruits {
+      __typename
+      id
+      fruit_name
+      origin
+      description
+    }
+    """
+
+  public static let possibleTypes: [String] = ["Fruits"]
+
+  public static var selections: [GraphQLSelection] {
+    return [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("id", type: .scalar(GraphQLID.self)),
+      GraphQLField("fruit_name", type: .scalar(String.self)),
+      GraphQLField("origin", type: .scalar(String.self)),
+      GraphQLField("description", type: .scalar(String.self)),
+    ]
+  }
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(id: GraphQLID? = nil, fruitName: String? = nil, origin: String? = nil, description: String? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName, "origin": origin, "description": description])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  public var id: GraphQLID? {
+    get {
+      return resultMap["id"] as? GraphQLID
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var fruitName: String? {
+    get {
+      return resultMap["fruit_name"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "fruit_name")
+    }
+  }
+
+  public var origin: String? {
+    get {
+      return resultMap["origin"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "origin")
+    }
+  }
+
+  public var description: String? {
+    get {
+      return resultMap["description"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "description")
     }
   }
 }
