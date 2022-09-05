@@ -26,6 +26,8 @@
 		CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */; };
 		CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */; };
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
+		CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */; };
+		CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsRepositoryImpl.swift; sourceTree = "<group>"; };
 		CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMapper.swift; sourceTree = "<group>"; };
 		CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
+		CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCase.swift; sourceTree = "<group>"; };
+		CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCaseImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 		CF2EB88528C5DB4B00548A5C /* fruits */ = {
 			isa = PBXGroup;
 			children = (
+				CFBAB6DF28C5FC5E00DED95C /* useCase */,
 				CF2EB89928C5E99E00548A5C /* mapper */,
 				CF2EB88F28C5E12E00548A5C /* model */,
 				CF2EB88628C5DDA200548A5C /* repository */,
@@ -251,6 +256,15 @@
 				CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		CFBAB6DF28C5FC5E00DED95C /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+				CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */,
+				CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */,
+			);
+			path = useCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +432,9 @@
 				CF2EB88D28C5DF5A00548A5C /* ApolloNetwork.swift in Sources */,
 				CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */,
 				CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */,
+				CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */,
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
+				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
 				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
