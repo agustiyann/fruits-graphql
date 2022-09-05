@@ -1,0 +1,8 @@
+query FruitList {
+  fruits {
+    id
+    fruit_name
+    origin
+    description
+  }
+}
