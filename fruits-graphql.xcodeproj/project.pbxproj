@@ -159,7 +159,6 @@
 		CF2EB88128C5D9DB00548A5C /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				CF2EB88628C5DDA200548A5C /* repository */,
 				CF2EB88528C5DB4B00548A5C /* fruits */,
 			);
 			path = domain;
@@ -177,6 +176,7 @@
 		CF2EB88528C5DB4B00548A5C /* fruits */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EB88628C5DDA200548A5C /* repository */,
 				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
 			);
 			path = fruits;
