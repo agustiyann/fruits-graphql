@@ -28,6 +28,9 @@
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
 		CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */; };
 		CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */; };
+		CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */; };
+		CFBAB6E928C5FF0C00DED95C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CFBAB6E828C5FF0C00DED95C /* RxCocoa */; };
+		CFBAB6EB28C5FF0C00DED95C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFBAB6EA28C5FF0C00DED95C /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,7 @@
 		CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
 		CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCase.swift; sourceTree = "<group>"; };
 		CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCaseImpl.swift; sourceTree = "<group>"; };
+		CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBAB6E928C5FF0C00DED95C /* RxCocoa in Frameworks */,
 				CF2EB87B28C5D75C00548A5C /* Apollo in Frameworks */,
+				CFBAB6EB28C5FF0C00DED95C /* RxSwift in Frameworks */,
 				CF2EB87D28C5D75C00548A5C /* ApolloWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +197,7 @@
 		CF2EB88528C5DB4B00548A5C /* fruits */ = {
 			isa = PBXGroup;
 			children = (
+				CFBAB6E428C5FE3D00DED95C /* viewModel */,
 				CFBAB6DF28C5FC5E00DED95C /* useCase */,
 				CF2EB89928C5E99E00548A5C /* mapper */,
 				CF2EB88F28C5E12E00548A5C /* model */,
@@ -267,6 +274,14 @@
 			path = useCase;
 			sourceTree = "<group>";
 		};
+		CFBAB6E428C5FE3D00DED95C /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,6 +302,8 @@
 			packageProductDependencies = (
 				CF2EB87A28C5D75C00548A5C /* Apollo */,
 				CF2EB87C28C5D75C00548A5C /* ApolloWebSocket */,
+				CFBAB6E828C5FF0C00DED95C /* RxCocoa */,
+				CFBAB6EA28C5FF0C00DED95C /* RxSwift */,
 			);
 			productName = "fruits-graphql";
 			productReference = CF2EB84628C5D66800548A5C /* fruits-graphql.app */;
@@ -362,6 +379,7 @@
 			mainGroup = CF2EB83D28C5D66700548A5C;
 			packageReferences = (
 				CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = CF2EB84728C5D66800548A5C /* Products */;
 			projectDirPath = "";
@@ -435,6 +453,7 @@
 				CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */,
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
+				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
 				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
@@ -791,6 +810,14 @@
 				kind = branch;
 			};
 		};
+		CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -803,6 +830,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		CFBAB6E828C5FF0C00DED95C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CFBAB6EA28C5FF0C00DED95C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
