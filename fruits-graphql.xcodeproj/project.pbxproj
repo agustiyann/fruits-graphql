@@ -21,6 +21,7 @@
 		CF2EB88828C5DDDC00548A5C /* FruitList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = CF2EB88728C5DDDC00548A5C /* FruitList.graphql */; };
 		CF2EB88A28C5DEF600548A5C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB88928C5DEF600548A5C /* API.swift */; };
 		CF2EB88D28C5DF5A00548A5C /* ApolloNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB88C28C5DF5A00548A5C /* ApolloNetwork.swift */; };
+		CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89028C5E14100548A5C /* FruitModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CF2EB88728C5DDDC00548A5C /* FruitList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FruitList.graphql; sourceTree = "<group>"; };
 		CF2EB88928C5DEF600548A5C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CF2EB88C28C5DF5A00548A5C /* ApolloNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloNetwork.swift; sourceTree = "<group>"; };
+		CF2EB89028C5E14100548A5C /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		CF2EB88128C5D9DB00548A5C /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EB88F28C5E12E00548A5C /* model */,
 				CF2EB88528C5DB4B00548A5C /* fruits */,
 			);
 			path = domain;
@@ -204,6 +207,14 @@
 				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		CF2EB88F28C5E12E00548A5C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CF2EB89028C5E14100548A5C /* FruitModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 				CF2EB88D28C5DF5A00548A5C /* ApolloNetwork.swift in Sources */,
 				CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
+				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
 				CF2EB84C28C5D66800548A5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
