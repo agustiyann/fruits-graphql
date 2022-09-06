@@ -9,6 +9,7 @@ import Foundation
 
 class FruitDetailUseCaseImpl: FruitDetailUseCase {
     
+    static let shared = FruitDetailUseCaseImpl()
     private var fruitDetailRepository: FruitDetailRepository
     
     init(fruitDetailRepository: FruitDetailRepository = FruitDetailRepositoryImpl.shared) {

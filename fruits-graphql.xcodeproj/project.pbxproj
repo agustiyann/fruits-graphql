@@ -39,6 +39,7 @@
 		CFDC806728C6F1BE009A351A /* FruitDetailRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806628C6F1BE009A351A /* FruitDetailRepositoryImpl.swift */; };
 		CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */; };
 		CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */; };
+		CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		CFDC806628C6F1BE009A351A /* FruitDetailRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailRepositoryImpl.swift; sourceTree = "<group>"; };
 		CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCase.swift; sourceTree = "<group>"; };
 		CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCaseImpl.swift; sourceTree = "<group>"; };
+		CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 		CFDC805B28C6E1BE009A351A /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
 				CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */,
 				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
+				CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
 				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
