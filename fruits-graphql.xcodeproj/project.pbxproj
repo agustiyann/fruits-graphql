@@ -37,6 +37,8 @@
 		CFDC806328C6E6F1009A351A /* FruitDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = CFDC806228C6E6F1009A351A /* FruitDetail.graphql */; };
 		CFDC806528C6F0E6009A351A /* FruitDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806428C6F0E6009A351A /* FruitDetailRepository.swift */; };
 		CFDC806728C6F1BE009A351A /* FruitDetailRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806628C6F1BE009A351A /* FruitDetailRepositoryImpl.swift */; };
+		CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */; };
+		CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		CFDC806228C6E6F1009A351A /* FruitDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FruitDetail.graphql; sourceTree = "<group>"; };
 		CFDC806428C6F0E6009A351A /* FruitDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailRepository.swift; sourceTree = "<group>"; };
 		CFDC806628C6F1BE009A351A /* FruitDetailRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailRepositoryImpl.swift; sourceTree = "<group>"; };
+		CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCase.swift; sourceTree = "<group>"; };
+		CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCaseImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +349,8 @@
 		CFDC805A28C6E1BA009A351A /* useCase */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */,
+				CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */,
 			);
 			path = useCase;
 			sourceTree = "<group>";
@@ -527,10 +533,12 @@
 				CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */,
 				CFDC806128C6E697009A351A /* FruitDetailMapper.swift in Sources */,
 				CFDC806728C6F1BE009A351A /* FruitDetailRepositoryImpl.swift in Sources */,
+				CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */,
 				CFDC805F28C6E26A009A351A /* FruitDetailModel.swift in Sources */,
 				CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */,
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
+				CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */,
 				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
