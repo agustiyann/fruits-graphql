@@ -71,8 +71,8 @@ public final class FruitListQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID? = nil, fruitName: String? = nil, origin: String? = nil, description: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName, "origin": origin, "description": description])
+      public init(id: GraphQLID? = nil, fruitName: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName])
       }
 
       public var __typename: String {
@@ -121,8 +121,6 @@ public struct FruitFragment: GraphQLFragment {
       __typename
       id
       fruit_name
-      origin
-      description
     }
     """
 
@@ -133,8 +131,6 @@ public struct FruitFragment: GraphQLFragment {
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
       GraphQLField("id", type: .scalar(GraphQLID.self)),
       GraphQLField("fruit_name", type: .scalar(String.self)),
-      GraphQLField("origin", type: .scalar(String.self)),
-      GraphQLField("description", type: .scalar(String.self)),
     ]
   }
 
@@ -144,8 +140,8 @@ public struct FruitFragment: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID? = nil, fruitName: String? = nil, origin: String? = nil, description: String? = nil) {
-    self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName, "origin": origin, "description": description])
+  public init(id: GraphQLID? = nil, fruitName: String? = nil) {
+    self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName])
   }
 
   public var __typename: String {
@@ -172,24 +168,6 @@ public struct FruitFragment: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "fruit_name")
-    }
-  }
-
-  public var origin: String? {
-    get {
-      return resultMap["origin"] as? String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "origin")
-    }
-  }
-
-  public var description: String? {
-    get {
-      return resultMap["description"] as? String
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "description")
     }
   }
 }

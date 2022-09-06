@@ -11,6 +11,6 @@ class FruitMapper {
     static let shared = FruitMapper()
     
     func convertGraphqlFruitsToFruitsModel(fruit: FruitFragment) -> FruitModel {
-        return FruitModel(id: fruit.id!, name: fruit.fruitName!, origin: fruit.origin!, description: fruit.description!)
+        return FruitModel(id: fruit.id!, name: fruit.fruitName!)
     }
 }

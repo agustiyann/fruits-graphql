@@ -7,6 +7,4 @@ query FruitList {
 fragment FruitFragment on Fruits {
   id
   fruit_name
-  origin
-  description
 }
