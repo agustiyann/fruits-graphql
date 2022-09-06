@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddFruitViewController: UIViewController {
     
@@ -108,6 +109,16 @@ class AddFruitViewController: UIViewController {
         return tf
     }()
     
+    private let saveButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
+        button.setTitle("Save", for: .normal)
+        button.backgroundColor = .systemGreen
+        button.tintColor = .white
+        return button
+    }()
+    
     private let stackView: UIStackView = {
         let stView = UIStackView()
         stView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,6 +127,9 @@ class AddFruitViewController: UIViewController {
         stView.spacing = 4.0
         return stView
     }()
+    
+    let viewModel = AddFruitViewModel()
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +140,9 @@ class AddFruitViewController: UIViewController {
     
     private func configureUI() {
         view.addSubview(stackView)
+        view.addSubview(saveButton)
+        
+        saveButton.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
 
         [
             idTextField,
@@ -138,7 +155,7 @@ class AddFruitViewController: UIViewController {
             bloomTextField,
             maturationTextField,
             lifeCycleTextField,
-            climaticTextField
+            climaticTextField,
         ].forEach { view in
             stackView.addArrangedSubview(view)
         }
@@ -146,7 +163,73 @@ class AddFruitViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 456).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        
+        saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+    }
+    
+    @objc private func savePressed() {
+        if let id = idTextField.text,
+           let scientName = scientificNameTextField.text,
+           let treeName = treeNameTextField.text,
+           let fruitName = fruitNameTextField.text,
+           let family = familyTextField.text,
+           let origin = originTextField.text,
+           let desc = descTextField.text,
+           let bloom = bloomTextField.text,
+           let maturation = maturationTextField.text,
+           let lifeCycle = lifeCycleTextField.text,
+           let climatic = climaticTextField.text {
+            viewModel.addFruit(
+                addFruitId: id,
+                scientificName: scientName,
+                treeName: treeName,
+                fruitName: fruitName,
+                family: family,
+                origin: origin,
+                description: desc,
+                bloom: bloom,
+                maturationFruit: maturation,
+                lifeCycle: lifeCycle,
+                climaticZone: climatic)
+        }
+        
+        viewModel
+            .fruit
+            .skip(1)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { fruit in
+                print("success adding \(String(describing: fruit?.name))")
+                self.navigationController?.popViewController(animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .loading
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { loading in
+                loading ? print("loading") : print("finish")
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                if error != nil {
+                    guard let err = (error as? BaseErrorModel),
+                            let message = err.errors.first?.message
+                    else {
+                        print("error system")
+                        return
+                    }
+                    
+                    print(message)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 
 }
