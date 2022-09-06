@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "FruitTableViewCell", bundle: nil), forCellReuseIdentifier: "fruit-cell")
         return tableView
     }()
     
@@ -83,19 +83,25 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fruit-cell", for: indexPath) as! FruitTableViewCell
         let data = fruits[indexPath.row]
-        cell.textLabel?.text = "\(data.name)"
+        
+        cell.titleLabel.text = "\(data.name)"
+        cell.actionBlock = {
+            print("button pressed \(indexPath.row+1)")
+        }
+        
         return cell
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        print("handle tap")
     }
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailVC = FruitDetailViewController()
-        detailVC.id = fruits[indexPath.row].id
-        self.navigationController?.pushViewController(detailVC, animated: false)
     }
 }
 

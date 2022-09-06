@@ -9,4 +9,18 @@ import Foundation
 
 protocol FruitsRepository {
     func getFruits(completion: @escaping (Result<[FruitModel], Error>) -> Void)
+    func addFruit(
+        addFruitId: String,
+        scientificName: String,
+        treeName: String,
+        fruitName: String,
+        family: String,
+        origin: String,
+        description: String,
+        bloom: String,
+        maturationFruit: String,
+        lifeCycle: String,
+        climaticZone: String,
+        completion: @escaping (Result<FruitModel, Error>
+        ) -> Void)
 }

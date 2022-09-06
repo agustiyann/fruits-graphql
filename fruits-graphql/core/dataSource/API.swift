@@ -239,6 +239,154 @@ public final class FruitListQuery: GraphQLQuery {
   }
 }
 
+public final class AddFruitMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation AddFruit($addFruitId: ID!, $scientificName: String!, $treeName: String!, $fruitName: String!, $family: String!, $origin: String!, $description: String!, $bloom: String!, $maturationFruit: String!, $lifeCycle: String!, $climaticZone: String!) {
+      addFruit(
+        id: $addFruitId
+        scientific_name: $scientificName
+        tree_name: $treeName
+        fruit_name: $fruitName
+        family: $family
+        origin: $origin
+        description: $description
+        bloom: $bloom
+        maturation_fruit: $maturationFruit
+        life_cycle: $lifeCycle
+        climatic_zone: $climaticZone
+      ) {
+        __typename
+        ...FruitFragment
+      }
+    }
+    """
+
+  public let operationName: String = "AddFruit"
+
+  public var queryDocument: String {
+    var document: String = operationDefinition
+    document.append("\n" + FruitFragment.fragmentDefinition)
+    return document
+  }
+
+  public var addFruitId: GraphQLID
+  public var scientificName: String
+  public var treeName: String
+  public var fruitName: String
+  public var family: String
+  public var origin: String
+  public var description: String
+  public var bloom: String
+  public var maturationFruit: String
+  public var lifeCycle: String
+  public var climaticZone: String
+
+  public init(addFruitId: GraphQLID, scientificName: String, treeName: String, fruitName: String, family: String, origin: String, description: String, bloom: String, maturationFruit: String, lifeCycle: String, climaticZone: String) {
+    self.addFruitId = addFruitId
+    self.scientificName = scientificName
+    self.treeName = treeName
+    self.fruitName = fruitName
+    self.family = family
+    self.origin = origin
+    self.description = description
+    self.bloom = bloom
+    self.maturationFruit = maturationFruit
+    self.lifeCycle = lifeCycle
+    self.climaticZone = climaticZone
+  }
+
+  public var variables: GraphQLMap? {
+    return ["addFruitId": addFruitId, "scientificName": scientificName, "treeName": treeName, "fruitName": fruitName, "family": family, "origin": origin, "description": description, "bloom": bloom, "maturationFruit": maturationFruit, "lifeCycle": lifeCycle, "climaticZone": climaticZone]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("addFruit", arguments: ["id": GraphQLVariable("addFruitId"), "scientific_name": GraphQLVariable("scientificName"), "tree_name": GraphQLVariable("treeName"), "fruit_name": GraphQLVariable("fruitName"), "family": GraphQLVariable("family"), "origin": GraphQLVariable("origin"), "description": GraphQLVariable("description"), "bloom": GraphQLVariable("bloom"), "maturation_fruit": GraphQLVariable("maturationFruit"), "life_cycle": GraphQLVariable("lifeCycle"), "climatic_zone": GraphQLVariable("climaticZone")], type: .nonNull(.object(AddFruit.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(addFruit: AddFruit) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "addFruit": addFruit.resultMap])
+    }
+
+    public var addFruit: AddFruit {
+      get {
+        return AddFruit(unsafeResultMap: resultMap["addFruit"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "addFruit")
+      }
+    }
+
+    public struct AddFruit: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Fruits"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLFragmentSpread(FruitFragment.self),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, fruitName: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var fragments: Fragments {
+        get {
+          return Fragments(unsafeResultMap: resultMap)
+        }
+        set {
+          resultMap += newValue.resultMap
+        }
+      }
+
+      public struct Fragments {
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public var fruitFragment: FruitFragment {
+          get {
+            return FruitFragment(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+      }
+    }
+  }
+}
+
 public struct FruitFragment: GraphQLFragment {
   /// The raw GraphQL definition of this fragment.
   public static let fragmentDefinition: String =

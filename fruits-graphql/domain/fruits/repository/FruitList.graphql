@@ -8,3 +8,9 @@ fragment FruitFragment on Fruits {
   id
   fruit_name
 }
+
+mutation AddFruit($addFruitId: ID!, $scientificName: String!, $treeName: String!, $fruitName: String!, $family: String!, $origin: String!, $description: String!, $bloom: String!, $maturationFruit: String!, $lifeCycle: String!, $climaticZone: String!) {
+  addFruit(id: $addFruitId, scientific_name: $scientificName, tree_name: $treeName, fruit_name: $fruitName, family: $family, origin: $origin, description: $description, bloom: $bloom, maturation_fruit: $maturationFruit, life_cycle: $lifeCycle, climatic_zone: $climaticZone) {
+    ...FruitFragment
+  }
+}
