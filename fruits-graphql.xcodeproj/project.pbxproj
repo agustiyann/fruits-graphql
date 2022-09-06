@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1802A428C7B324004AF808 /* AddFruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */; };
 		CF2A066628C7562900E4433F /* AddFruitParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066528C7562900E4433F /* AddFruitParameter.swift */; };
 		CF2A066C28C7657200E4433F /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066B28C7657200E4433F /* AddFruitViewController.swift */; };
 		CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84928C5D66800548A5C /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewModel.swift; sourceTree = "<group>"; };
 		CF2A066528C7562900E4433F /* AddFruitParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitParameter.swift; sourceTree = "<group>"; };
 		CF2A066B28C7657200E4433F /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
 		CF2EB84628C5D66800548A5C /* fruits-graphql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fruits-graphql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,22 +137,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF2A066928C7652800E4433F /* add */ = {
-			isa = PBXGroup;
-			children = (
-				CF2A066A28C7652E00E4433F /* view */,
-			);
-			path = add;
-			sourceTree = "<group>";
-		};
-		CF2A066A28C7652E00E4433F /* view */ = {
-			isa = PBXGroup;
-			children = (
-				CF2A066B28C7657200E4433F /* AddFruitViewController.swift */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		CF2EB83D28C5D66700548A5C = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +209,6 @@
 		CF2EB88128C5D9DB00548A5C /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				CF2A066928C7652800E4433F /* add */,
 				CF2EB89C28C5F93900548A5C /* common */,
 				CF2EB88528C5DB4B00548A5C /* fruits */,
 				CFDC805528C6E173009A351A /* detail */,
@@ -274,6 +259,7 @@
 		CF2EB88E28C5E0FF00548A5C /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CF2A066B28C7657200E4433F /* AddFruitViewController.swift */,
 				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
 				CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */,
 				CFFE8C7428C74C30001F4729 /* FruitTableViewCell.xib */,
@@ -327,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */,
+				CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -576,6 +563,7 @@
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
 				CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */,
+				CF1802A428C7B324004AF808 /* AddFruitViewModel.swift in Sources */,
 				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
 				CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
