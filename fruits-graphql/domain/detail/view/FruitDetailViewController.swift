@@ -20,6 +20,7 @@ class FruitDetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14, weight: .thin)
+        label.numberOfLines = 0
         return label
     }()
     

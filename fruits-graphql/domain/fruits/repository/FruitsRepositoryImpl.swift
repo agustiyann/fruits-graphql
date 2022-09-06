@@ -21,12 +21,8 @@ class FruitsRepositoryImpl: FruitsRepository {
             switch result {
             case .success(let response):
                 if let data = response.data?.fruits {
-                    var fuits = [FruitModel]()
-                    data.forEach { fruit in
-                        let fruitMap = FruitMapper.shared.convertGraphqlFruitsToFruitsModel(fruit: (fruit?.fragments.fruitFragment)!)
-                        fuits.append(fruitMap)
-                    }
-                    completion(.success(fuits))
+                    let fruits = FruitMapper.shared.convertGraphqlFruitListToArrayFruitModel(fruits: data)
+                    completion(.success(fruits))
                 } else {
                     completion(.failure(BaseErrorModel.convertGraphqlError(errors: response.errors)))
                 }
