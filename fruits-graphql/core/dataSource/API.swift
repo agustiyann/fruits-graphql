@@ -4,6 +4,132 @@
 import Apollo
 import Foundation
 
+public final class FruitDetailQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query FruitDetail($fruitId: ID!) {
+      fruit(id: $fruitId) {
+        __typename
+        id
+        fruit_name
+        origin
+        description
+      }
+    }
+    """
+
+  public let operationName: String = "FruitDetail"
+
+  public var fruitId: GraphQLID
+
+  public init(fruitId: GraphQLID) {
+    self.fruitId = fruitId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["fruitId": fruitId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("fruit", arguments: ["id": GraphQLVariable("fruitId")], type: .object(Fruit.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(fruit: Fruit? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "fruit": fruit.flatMap { (value: Fruit) -> ResultMap in value.resultMap }])
+    }
+
+    public var fruit: Fruit? {
+      get {
+        return (resultMap["fruit"] as? ResultMap).flatMap { Fruit(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "fruit")
+      }
+    }
+
+    public struct Fruit: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Fruit"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("fruit_name", type: .scalar(String.self)),
+          GraphQLField("origin", type: .scalar(String.self)),
+          GraphQLField("description", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, fruitName: String? = nil, origin: String? = nil, description: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Fruit", "id": id, "fruit_name": fruitName, "origin": origin, "description": description])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID? {
+        get {
+          return resultMap["id"] as? GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var fruitName: String? {
+        get {
+          return resultMap["fruit_name"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "fruit_name")
+        }
+      }
+
+      public var origin: String? {
+        get {
+          return resultMap["origin"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "origin")
+        }
+      }
+
+      public var description: String? {
+        get {
+          return resultMap["description"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "description")
+        }
+      }
+    }
+  }
+}
+
 public final class FruitListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

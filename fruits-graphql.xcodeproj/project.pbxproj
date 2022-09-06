@@ -31,6 +31,10 @@
 		CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */; };
 		CFBAB6E928C5FF0C00DED95C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CFBAB6E828C5FF0C00DED95C /* RxCocoa */; };
 		CFBAB6EB28C5FF0C00DED95C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFBAB6EA28C5FF0C00DED95C /* RxSwift */; };
+		CFDC805D28C6E21C009A351A /* FruitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC805C28C6E21B009A351A /* FruitDetailViewController.swift */; };
+		CFDC805F28C6E26A009A351A /* FruitDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC805E28C6E26A009A351A /* FruitDetailModel.swift */; };
+		CFDC806128C6E697009A351A /* FruitDetailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806028C6E697009A351A /* FruitDetailMapper.swift */; };
+		CFDC806328C6E6F1009A351A /* FruitDetail.graphql in Resources */ = {isa = PBXBuildFile; fileRef = CFDC806228C6E6F1009A351A /* FruitDetail.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCase.swift; sourceTree = "<group>"; };
 		CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCaseImpl.swift; sourceTree = "<group>"; };
 		CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
+		CFDC805C28C6E21B009A351A /* FruitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewController.swift; sourceTree = "<group>"; };
+		CFDC805E28C6E26A009A351A /* FruitDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailModel.swift; sourceTree = "<group>"; };
+		CFDC806028C6E697009A351A /* FruitDetailMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailMapper.swift; sourceTree = "<group>"; };
+		CFDC806228C6E6F1009A351A /* FruitDetail.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FruitDetail.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +189,7 @@
 			children = (
 				CF2EB89C28C5F93900548A5C /* common */,
 				CF2EB88528C5DB4B00548A5C /* fruits */,
+				CFDC805528C6E173009A351A /* detail */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -278,6 +287,65 @@
 			isa = PBXGroup;
 			children = (
 				CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		CFDC805528C6E173009A351A /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC805B28C6E1BE009A351A /* viewModel */,
+				CFDC805A28C6E1BA009A351A /* useCase */,
+				CFDC805928C6E1B2009A351A /* repository */,
+				CFDC805828C6E18B009A351A /* mapper */,
+				CFDC805728C6E187009A351A /* model */,
+				CFDC805628C6E17E009A351A /* view */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		CFDC805628C6E17E009A351A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC805C28C6E21B009A351A /* FruitDetailViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		CFDC805728C6E187009A351A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC805E28C6E26A009A351A /* FruitDetailModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		CFDC805828C6E18B009A351A /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC806028C6E697009A351A /* FruitDetailMapper.swift */,
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		CFDC805928C6E1B2009A351A /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC806228C6E6F1009A351A /* FruitDetail.graphql */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		CFDC805A28C6E1BA009A351A /* useCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = useCase;
+			sourceTree = "<group>";
+		};
+		CFDC805B28C6E1BE009A351A /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -399,6 +467,7 @@
 			files = (
 				CF2EB88828C5DDDC00548A5C /* FruitList.graphql in Resources */,
 				CF2EB85628C5D66B00548A5C /* LaunchScreen.storyboard in Resources */,
+				CFDC806328C6E6F1009A351A /* FruitDetail.graphql in Resources */,
 				CF2EB85328C5D66B00548A5C /* Assets.xcassets in Resources */,
 				CF2EB85128C5D66800548A5C /* Main.storyboard in Resources */,
 			);
@@ -450,6 +519,8 @@
 				CF2EB88D28C5DF5A00548A5C /* ApolloNetwork.swift in Sources */,
 				CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */,
 				CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */,
+				CFDC806128C6E697009A351A /* FruitDetailMapper.swift in Sources */,
+				CFDC805F28C6E26A009A351A /* FruitDetailModel.swift in Sources */,
 				CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */,
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
@@ -458,6 +529,7 @@
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
 				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
 				CF2EB84C28C5D66800548A5C /* SceneDelegate.swift in Sources */,
+				CFDC805D28C6E21C009A351A /* FruitDetailViewController.swift in Sources */,
 				CF2EB89628C5E88300548A5C /* FruitsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

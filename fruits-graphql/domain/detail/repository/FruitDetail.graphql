@@ -1,0 +1,8 @@
+query FruitDetail($fruitId: ID!) {
+  fruit(id: $fruitId) {
+    id
+    fruit_name
+    origin
+    description
+  }
+}
