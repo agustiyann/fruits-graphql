@@ -25,10 +25,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Fruits"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Add",
+            style: .plain,
+            target: self,
+            action: #selector(addTapped))
     
         configureTableView()
         bindViewModel()
         viewModel.getFruits()
+    }
+    
+    @objc private func addTapped() {
+        let vc = AddFruitViewController()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 
     private func configureTableView() {

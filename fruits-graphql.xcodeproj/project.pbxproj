@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF2A066628C7562900E4433F /* AddFruitParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066528C7562900E4433F /* AddFruitParameter.swift */; };
+		CF2A066C28C7657200E4433F /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066B28C7657200E4433F /* AddFruitViewController.swift */; };
 		CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84928C5D66800548A5C /* AppDelegate.swift */; };
 		CF2EB84C28C5D66800548A5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */; };
 		CF2EB84E28C5D66800548A5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84D28C5D66800548A5C /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */; };
 		CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */; };
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
+		CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */; };
 		CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */; };
 		CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */; };
 		CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */; };
@@ -64,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		CF2A066528C7562900E4433F /* AddFruitParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitParameter.swift; sourceTree = "<group>"; };
+		CF2A066B28C7657200E4433F /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
 		CF2EB84628C5D66800548A5C /* fruits-graphql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fruits-graphql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2EB84928C5D66800548A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 				CF2EB87B28C5D75C00548A5C /* Apollo in Frameworks */,
 				CFBAB6EB28C5FF0C00DED95C /* RxSwift in Frameworks */,
 				CF2EB87D28C5D75C00548A5C /* ApolloWebSocket in Frameworks */,
+				CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF2A066928C7652800E4433F /* add */ = {
+			isa = PBXGroup;
+			children = (
+				CF2A066A28C7652E00E4433F /* view */,
+			);
+			path = add;
+			sourceTree = "<group>";
+		};
+		CF2A066A28C7652E00E4433F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				CF2A066B28C7657200E4433F /* AddFruitViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		CF2EB83D28C5D66700548A5C = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +223,7 @@
 		CF2EB88128C5D9DB00548A5C /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				CF2A066928C7652800E4433F /* add */,
 				CF2EB89C28C5F93900548A5C /* common */,
 				CF2EB88528C5DB4B00548A5C /* fruits */,
 				CFDC805528C6E173009A351A /* detail */,
@@ -396,6 +417,7 @@
 				CF2EB87C28C5D75C00548A5C /* ApolloWebSocket */,
 				CFBAB6E828C5FF0C00DED95C /* RxCocoa */,
 				CFBAB6EA28C5FF0C00DED95C /* RxSwift */,
+				CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */,
 			);
 			productName = "fruits-graphql";
 			productReference = CF2EB84628C5D66800548A5C /* fruits-graphql.app */;
@@ -449,6 +471,7 @@
 				TargetAttributes = {
 					CF2EB84528C5D66700548A5C = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					CF2EB85B28C5D66B00548A5C = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -472,6 +495,7 @@
 			packageReferences = (
 				CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */,
 			);
 			productRefGroup = CF2EB84728C5D66800548A5C /* Products */;
 			projectDirPath = "";
@@ -557,6 +581,7 @@
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
 				CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */,
 				CF2EB89128C5E14100548A5C /* FruitModel.swift in Sources */,
+				CF2A066C28C7657200E4433F /* AddFruitViewController.swift in Sources */,
 				CF2A066628C7562900E4433F /* AddFruitParameter.swift in Sources */,
 				CF2EB84C28C5D66800548A5C /* SceneDelegate.swift in Sources */,
 				CFDC806528C6F0E6009A351A /* FruitDetailRepository.swift in Sources */,
@@ -737,6 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KRF6V32MMS;
@@ -755,6 +781,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.agustiyan.fruits-graphql";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -765,6 +793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KRF6V32MMS;
@@ -783,6 +812,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.agustiyan.fruits-graphql";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -914,6 +944,14 @@
 				kind = branch;
 			};
 		};
+		CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michaeltyson/TPKeyboardAvoiding";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -934,6 +972,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */;
+			productName = TPKeyboardAvoiding;
 		};
 		CFBAB6E828C5FF0C00DED95C /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
