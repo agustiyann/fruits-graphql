@@ -116,6 +116,11 @@ extension ViewController: UITableViewDataSource {
         let data = fruits[indexPath.row]
         
         cell.titleLabel.text = "\(data.name)"
+        cell.actionBlock = {
+            print("delete button presed on \(indexPath.row+1)")
+            let id = self.fruits[indexPath.row].id
+            self.viewModel.deleteFruit(id: id)
+        }
         
         return cell
     }
