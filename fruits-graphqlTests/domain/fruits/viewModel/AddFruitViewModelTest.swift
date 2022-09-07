@@ -30,6 +30,9 @@ class AddFruitViewModelTest: XCTestCase {
     }
     
     func testAddFruitSuccess() {
+        let expectation = expectation(description: "Should return FruitModel")
+        let resultExpectation = fruitModelMock
+        
         self.addFruitViewModel
             .error
             .observe(on: MainScheduler.instance)
@@ -43,7 +46,8 @@ class AddFruitViewModelTest: XCTestCase {
             .skip(1)
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { fruit in
-                XCTAssertEqual(fruit, fruitModelMock)
+                XCTAssertEqual(fruit, resultExpectation)
+                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
@@ -59,15 +63,20 @@ class AddFruitViewModelTest: XCTestCase {
             maturationFruit: "",
             lifeCycle: "",
             climaticZone: "")
+        
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testAddFruitFailed() {
         self.addFruitViewModel = AddFruitViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        let expectation = expectation(description: "Should return Error")
+        
         self.addFruitViewModel
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 XCTAssertNotNil(error)
+                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
@@ -83,6 +92,8 @@ class AddFruitViewModelTest: XCTestCase {
             maturationFruit: "",
             lifeCycle: "",
             climaticZone: "")
+        
+        waitForExpectations(timeout: 1, handler: nil)
     }
 
 }
