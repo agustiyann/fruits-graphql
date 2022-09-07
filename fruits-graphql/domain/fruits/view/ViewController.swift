@@ -98,10 +98,24 @@ class ViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { message in
                 print(message)
+                self.getFruits()
                 self.tableView.reloadData()
             })
             .disposed(by: disposeBag)
 
+    }
+    
+    private func getFruits() {
+        viewModel
+            .fruits
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { fruitList in
+                self.fruits = fruitList
+                self.tableView.reloadData()
+                print("jumlah \(self.fruits.count)")
+                print("reload data")
+            })
+            .disposed(by: disposeBag)
     }
 
 }
@@ -118,8 +132,10 @@ extension ViewController: UITableViewDataSource {
         cell.titleLabel.text = "\(data.name)"
         cell.actionBlock = {
             print("delete button presed on \(indexPath.row+1)")
+            
             let id = self.fruits[indexPath.row].id
             self.viewModel.deleteFruit(id: id)
+            self.fruits.remove(at: indexPath.row)
         }
         
         return cell
@@ -144,7 +160,9 @@ extension ViewController: UITableViewDelegate {
         let action = UIContextualAction(style: .destructive, title: "Delete") {
             action, view, completionHandler in
             let id = self.fruits[indexPath.row].id
+            
             self.viewModel.deleteFruit(id: id)
+            self.fruits.remove(at: indexPath.row)
             print("swiped")
             completionHandler(true)
         }
