@@ -128,6 +128,12 @@ class AddFruitViewController: UIViewController {
         return stView
     }()
     
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     let viewModel = AddFruitViewModel()
     let disposeBag = DisposeBag()
 
@@ -138,9 +144,23 @@ class AddFruitViewController: UIViewController {
         configureUI()
     }
     
+    override func viewDidLayoutSubviews()
+      {
+          scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: 1000) // set height according you
+      }
+    
     private func configureUI() {
-        view.addSubview(stackView)
-        view.addSubview(saveButton)
+        view.addSubview(scrollView)
+        
+        let safeG = view.safeAreaLayoutGuide
+        
+        scrollView.leadingAnchor.constraint(equalTo: safeG.leadingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: safeG.topAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: safeG.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: safeG.bottomAnchor).isActive = true
+        
+        scrollView.addSubview(stackView)
+        scrollView.addSubview(saveButton)
         
         saveButton.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
 
@@ -160,14 +180,14 @@ class AddFruitViewController: UIViewController {
             stackView.addArrangedSubview(view)
         }
 
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
         stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
         
         saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
-        saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
     }
     
     @objc private func savePressed() {

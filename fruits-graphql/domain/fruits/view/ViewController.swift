@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     private let viewModel = FruitsViewModel()
     private let disposeBag = DisposeBag()
     
-    private var fruits = [FruitModel]()
+    private var fruits = [FruitModel]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +63,8 @@ class ViewController: UIViewController {
             .subscribe(onNext: { fruitList in
                 self.fruits = fruitList
                 self.tableView.reloadData()
+                print("jumlah \(self.fruits.count)")
+                print("reload data")
             })
             .disposed(by: disposeBag)
         
@@ -101,11 +107,6 @@ extension ViewController: UITableViewDataSource {
         let data = fruits[indexPath.row]
         
         cell.titleLabel.text = "\(data.name)"
-        cell.actionBlock = { [weak self] in
-//            print("button pressed \(indexPath.row+1)")
-//            self?.viewModel.deleteFruit(id: data.id)
-//            self?.bindViewFruitsModel()
-        }
         
         return cell
     }
