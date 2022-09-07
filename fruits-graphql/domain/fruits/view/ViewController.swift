@@ -92,6 +92,15 @@ class ViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        viewModel
+            .success
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { message in
+                print(message)
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
 
     }
 
@@ -131,7 +140,6 @@ extension ViewController: UITableViewDelegate {
             action, view, completionHandler in
             let id = self.fruits[indexPath.row].id
             self.viewModel.deleteFruit(id: id)
-            self.bindViewFruitsModel()
             print("swiped")
             completionHandler(true)
         }
