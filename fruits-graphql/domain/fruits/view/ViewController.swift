@@ -98,24 +98,11 @@ class ViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { message in
                 print(message)
-                self.getFruits()
+                self.viewModel.getFruits()
                 self.tableView.reloadData()
             })
             .disposed(by: disposeBag)
 
-    }
-    
-    private func getFruits() {
-        viewModel
-            .fruits
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { fruitList in
-                self.fruits = fruitList
-                self.tableView.reloadData()
-                print("jumlah \(self.fruits.count)")
-                print("reload data")
-            })
-            .disposed(by: disposeBag)
     }
 
 }
