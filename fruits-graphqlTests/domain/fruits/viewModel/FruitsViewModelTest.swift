@@ -1,0 +1,101 @@
+//
+//  FruitsViewModelTest.swift
+//  fruits-graphqlTests
+//
+//  Created by Agus Tiyansyah Syam on 07/09/22.
+//
+
+import XCTest
+import RxSwift
+@testable import fruits_graphql
+
+class FruitsViewModelTest: XCTestCase {
+    private var disposeBag: DisposeBag!
+    private var fruitsUseCaseFactory: FruitsUseCaseFactory!
+    private var fruitsViewModel: FruitsViewModel!
+
+    override func setUp() {
+        super.setUp()
+        disposeBag = DisposeBag()
+        fruitsUseCaseFactory = FruitsUseCaseFactory()
+        fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        disposeBag = nil
+        fruitsUseCaseFactory = nil
+        fruitsViewModel = nil
+    }
+    
+    func testGetFruitsSuccess() {
+        self.fruitsViewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                XCTAssertNil(error)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel
+            .fruits
+            .skip(1)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { fruits in
+                XCTAssertEqual(fruits.count, 1)
+                XCTAssertEqual(fruits.first?.id, fruitModelMock.id)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel.getFruits()
+    }
+    
+    func testGetFruitsFailed() {
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.fruitsViewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                XCTAssertNotNil(error)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel.getFruits()
+    }
+    
+    func testDeleteSuccess() {
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+        self.fruitsViewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                XCTAssertNil(error)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel
+            .success
+            .skip(1)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { message in
+                XCTAssertEqual(message, succesDelete)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel.deleteFruit(id: "1")
+    }
+    
+    func testDeleteFailed() {
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.fruitsViewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { error in
+                XCTAssertNotNil(error)
+            })
+            .disposed(by: disposeBag)
+        
+        self.fruitsViewModel.deleteFruit(id: "1")
+    }
+
+}

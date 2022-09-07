@@ -30,6 +30,11 @@
 		CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */; };
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
 		CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */; };
+		CF9A869428C88727005A2439 /* FruitsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A869328C88727005A2439 /* FruitsViewModelTest.swift */; };
+		CF9A869528C88775005A2439 /* FruitsUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA382CA28C8850C00494CB6 /* FruitsUseCaseFactory.swift */; };
+		CFA382BF28C8814C00494CB6 /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = CFA382BE28C8814C00494CB6 /* Mockingbird */; };
+		CFA382C528C883DD00494CB6 /* FruitsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA382C428C883DC00494CB6 /* FruitsHelper.swift */; };
+		CFA382C828C8849400494CB6 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA382C728C8849400494CB6 /* CommonHelper.swift */; };
 		CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */; };
 		CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */; };
 		CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */; };
@@ -46,6 +51,7 @@
 		CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */; };
 		CFFE8C7528C74C30001F4729 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */; };
 		CFFE8C7628C74C30001F4729 /* FruitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFE8C7428C74C30001F4729 /* FruitTableViewCell.xib */; };
+		F0DEA7B041A3EC1015A8EB85 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; path = "MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; sourceTree = "<group>"; };
 		CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewModel.swift; sourceTree = "<group>"; };
 		CF2A066528C7562900E4433F /* AddFruitParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitParameter.swift; sourceTree = "<group>"; };
 		CF2A066B28C7657200E4433F /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +98,10 @@
 		CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsRepositoryImpl.swift; sourceTree = "<group>"; };
 		CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMapper.swift; sourceTree = "<group>"; };
 		CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
+		CF9A869328C88727005A2439 /* FruitsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModelTest.swift; sourceTree = "<group>"; };
+		CFA382C428C883DC00494CB6 /* FruitsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsHelper.swift; sourceTree = "<group>"; };
+		CFA382C728C8849400494CB6 /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		CFA382CA28C8850C00494CB6 /* FruitsUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCaseFactory.swift; sourceTree = "<group>"; };
 		CFBAB6E028C5FC6F00DED95C /* FruitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCase.swift; sourceTree = "<group>"; };
 		CFBAB6E228C5FD4500DED95C /* FruitsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsUseCaseImpl.swift; sourceTree = "<group>"; };
 		CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
@@ -124,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA382BF28C8814C00494CB6 /* Mockingbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A2DFA57749D7BB38A1283A6 /* Generated Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */,
+			);
+			name = "Generated Mocks";
+			sourceTree = "<group>";
+		};
 		CF2EB83D28C5D66700548A5C = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +164,7 @@
 				CF2EB85F28C5D66B00548A5C /* fruits-graphqlTests */,
 				CF2EB86928C5D66B00548A5C /* fruits-graphqlUITests */,
 				CF2EB84728C5D66800548A5C /* Products */,
+				7A2DFA57749D7BB38A1283A6 /* Generated Mocks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +197,8 @@
 		CF2EB85F28C5D66B00548A5C /* fruits-graphqlTests */ = {
 			isa = PBXGroup;
 			children = (
+				CFA382C628C8847F00494CB6 /* common */,
+				CFA382C028C881DC00494CB6 /* domain */,
 				CF2EB86028C5D66B00548A5C /* fruits_graphqlTests.swift */,
 			);
 			path = "fruits-graphqlTests";
@@ -300,6 +323,48 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		CF9A869028C885A9005A2439 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A869328C88727005A2439 /* FruitsViewModelTest.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		CFA382C028C881DC00494CB6 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				CFA382C128C881F100494CB6 /* fruits */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		CFA382C128C881F100494CB6 /* fruits */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A869028C885A9005A2439 /* viewModel */,
+				CFA382C928C8850600494CB6 /* mock */,
+			);
+			path = fruits;
+			sourceTree = "<group>";
+		};
+		CFA382C628C8847F00494CB6 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				CFA382C728C8849400494CB6 /* CommonHelper.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		CFA382C928C8850600494CB6 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				CFA382CA28C8850C00494CB6 /* FruitsUseCaseFactory.swift */,
+				CFA382C428C883DC00494CB6 /* FruitsHelper.swift */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
 		CFBAB6DF28C5FC5E00DED95C /* useCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +479,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2EB87328C5D66B00548A5C /* Build configuration list for PBXNativeTarget "fruits-graphqlTests" */;
 			buildPhases = (
+				552C8629F11C2059F972C028 /* Generate Mockingbird Mocks */,
 				CF2EB85828C5D66B00548A5C /* Sources */,
 				CF2EB85928C5D66B00548A5C /* Frameworks */,
 				CF2EB85A28C5D66B00548A5C /* Resources */,
@@ -424,6 +490,9 @@
 				CF2EB85E28C5D66B00548A5C /* PBXTargetDependency */,
 			);
 			name = "fruits-graphqlTests";
+			packageProductDependencies = (
+				CFA382BE28C8814C00494CB6 /* Mockingbird */,
+			);
 			productName = "fruits-graphqlTests";
 			productReference = CF2EB85C28C5D66B00548A5C /* fruits-graphqlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -483,6 +552,7 @@
 				CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */,
+				CFA382BD28C8814C00494CB6 /* XCRemoteSwiftPackageReference "mockingbird" */,
 			);
 			productRefGroup = CF2EB84728C5D66800548A5C /* Products */;
 			projectDirPath = "";
@@ -526,6 +596,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		552C8629F11C2059F972C028 /* Generate Mockingbird Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Mockingbird Mocks";
+			outputPaths = (
+				"$(SRCROOT)/MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n\n# Prevent Xcode 13 from running this script while indexing.\n[[ \"${ACTION}\" == \"indexbuild\" ]] && exit 0\n\n# Infer the derived data location from the build environment.\n[[ -z \"${DERIVED_DATA+x}\" ]] && DERIVED_DATA=\"$(echo \"${BUILD_ROOT}\" | sed -n 's|\\(.*\\)/Build/.*|\\1|p')\"\n\n\"${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird\" generate --targets \"fruits-graphql\" --outputs \"${SRCROOT}/MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift\"";
+		};
 		CF2EB87E28C5D79600548A5C /* Apollo */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,7 +669,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF9A869428C88727005A2439 /* FruitsViewModelTest.swift in Sources */,
+				CFA382C828C8849400494CB6 /* CommonHelper.swift in Sources */,
 				CF2EB86128C5D66B00548A5C /* fruits_graphqlTests.swift in Sources */,
+				CF9A869528C88775005A2439 /* FruitsUseCaseFactory.swift in Sources */,
+				CFA382C528C883DD00494CB6 /* FruitsHelper.swift in Sources */,
+				F0DEA7B041A3EC1015A8EB85 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,6 +1031,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		CFA382BD28C8814C00494CB6 /* XCRemoteSwiftPackageReference "mockingbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/birdrides/mockingbird";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.20.0;
+			};
+		};
 		CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -965,6 +1064,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */;
 			productName = TPKeyboardAvoiding;
+		};
+		CFA382BE28C8814C00494CB6 /* Mockingbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFA382BD28C8814C00494CB6 /* XCRemoteSwiftPackageReference "mockingbird" */;
+			productName = Mockingbird;
 		};
 		CFBAB6E828C5FF0C00DED95C /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
