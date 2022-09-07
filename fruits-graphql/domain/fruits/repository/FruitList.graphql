@@ -14,3 +14,9 @@ mutation AddFruit($addFruitId: ID!, $scientificName: String!, $treeName: String!
     ...FruitFragment
   }
 }
+
+mutation DeleteFruit($deleteFruitId: ID!) {
+  deleteFruit(id: $deleteFruitId) {
+    ...FruitFragment
+  }
+}

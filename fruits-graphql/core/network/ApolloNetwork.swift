@@ -11,5 +11,5 @@ import Apollo
 class ApolloNetwork {
   static let shared = ApolloNetwork()
 
-  private(set) lazy var apollo = ApolloClient(url: URL(string: "http://localhost:9000/graphql")!)
+  private(set) lazy var apollo = ApolloClient(url: URL(string: "https://fruits-api.netlify.app/graphql")!)
 }

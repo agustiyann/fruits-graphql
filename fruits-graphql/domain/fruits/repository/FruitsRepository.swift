@@ -23,4 +23,5 @@ protocol FruitsRepository {
         climaticZone: String,
         completion: @escaping (Result<FruitModel, Error>
         ) -> Void)
+    func deleteFruit(id: String, completion: @escaping (Result<String, Error>) -> Void)
 }

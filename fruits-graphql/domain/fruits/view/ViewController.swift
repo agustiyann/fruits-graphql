@@ -32,8 +32,7 @@ class ViewController: UIViewController {
             action: #selector(addTapped))
     
         configureTableView()
-        bindViewModel()
-        
+        bindViewFruitsModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +52,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
-    private func bindViewModel() {
+    private func bindViewFruitsModel() {
         viewModel
             .fruits
             .observe(on: MainScheduler.instance)
@@ -102,21 +101,42 @@ extension ViewController: UITableViewDataSource {
         let data = fruits[indexPath.row]
         
         cell.titleLabel.text = "\(data.name)"
-        cell.actionBlock = {
-            print("button pressed \(indexPath.row+1)")
+        cell.actionBlock = { [weak self] in
+//            print("button pressed \(indexPath.row+1)")
+//            self?.viewModel.deleteFruit(id: data.id)
+//            self?.bindViewFruitsModel()
         }
         
         return cell
     }
     
-    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        print("handle tap")
-    }
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let delete = deleteContextualAction(forRowat: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+
+    private func deleteContextualAction(forRowat indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") {
+            action, view, completionHandler in
+            let id = self.fruits[indexPath.row].id
+            self.viewModel.deleteFruit(id: id)
+            self.bindViewFruitsModel()
+            print("swiped")
+            completionHandler(true)
+        }
+        action.image = UIImage(systemName: "trash.fill")
+
+        return action
     }
 }
 

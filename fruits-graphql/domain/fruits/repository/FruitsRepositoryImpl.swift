@@ -73,4 +73,16 @@ class FruitsRepositoryImpl: FruitsRepository {
             }
         }
     }
+    
+    func deleteFruit(id: String, completion: @escaping (Result<String, Error>) -> Void) {
+        apolloClient.apollo.perform(mutation: DeleteFruitMutation(deleteFruitId: id)) { result in
+            switch result {
+            case .success(_):
+                completion(.success("Success delete fruit"))
+            case .failure(let error):
+                completion(.failure(error.convertToBaseErrorModel()))
+            }
+        }
+    }
+    
 }

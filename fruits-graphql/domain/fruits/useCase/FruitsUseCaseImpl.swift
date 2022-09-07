@@ -48,4 +48,8 @@ class FruitsUseCaseImpl: FruitsUseCase {
             climaticZone: climaticZone,
             completion: completion)
     }
+    
+    func deleteFruit(id: String, completion: @escaping (Result<String, Error>) -> Void) {
+        self.fruitsRepository.deleteFruit(id: id, completion: completion)
+    }
 }

@@ -387,6 +387,122 @@ public final class AddFruitMutation: GraphQLMutation {
   }
 }
 
+public final class DeleteFruitMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation DeleteFruit($deleteFruitId: ID!) {
+      deleteFruit(id: $deleteFruitId) {
+        __typename
+        ...FruitFragment
+      }
+    }
+    """
+
+  public let operationName: String = "DeleteFruit"
+
+  public var queryDocument: String {
+    var document: String = operationDefinition
+    document.append("\n" + FruitFragment.fragmentDefinition)
+    return document
+  }
+
+  public var deleteFruitId: GraphQLID
+
+  public init(deleteFruitId: GraphQLID) {
+    self.deleteFruitId = deleteFruitId
+  }
+
+  public var variables: GraphQLMap? {
+    return ["deleteFruitId": deleteFruitId]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("deleteFruit", arguments: ["id": GraphQLVariable("deleteFruitId")], type: .nonNull(.object(DeleteFruit.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(deleteFruit: DeleteFruit) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "deleteFruit": deleteFruit.resultMap])
+    }
+
+    public var deleteFruit: DeleteFruit {
+      get {
+        return DeleteFruit(unsafeResultMap: resultMap["deleteFruit"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "deleteFruit")
+      }
+    }
+
+    public struct DeleteFruit: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Fruits"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLFragmentSpread(FruitFragment.self),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID? = nil, fruitName: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Fruits", "id": id, "fruit_name": fruitName])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var fragments: Fragments {
+        get {
+          return Fragments(unsafeResultMap: resultMap)
+        }
+        set {
+          resultMap += newValue.resultMap
+        }
+      }
+
+      public struct Fragments {
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public var fruitFragment: FruitFragment {
+          get {
+            return FruitFragment(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+      }
+    }
+  }
+}
+
 public struct FruitFragment: GraphQLFragment {
   /// The raw GraphQL definition of this fragment.
   public static let fragmentDefinition: String =
