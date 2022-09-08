@@ -126,6 +126,7 @@ class AddFruitViewController: UIViewController {
     
     let viewModel = AddFruitViewModel()
     let disposeBag = DisposeBag()
+    var fruitViewModel = FruitsViewModel()
     
     private var isValid = false
 
@@ -145,6 +146,7 @@ class AddFruitViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { fruit in
                 print("success adding \(String(describing: fruit?.name))")
+                self.fruitViewModel.getFruits()
                 self.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
@@ -268,8 +270,6 @@ class AddFruitViewController: UIViewController {
     
     @objc private func savePressed() {
         if let id = idTextField.text, let fruitName = fruitNameTextField.text, isValid  {
-            
-            
             viewModel.addFruit(
                 addFruitId: id,
                 scientificName: "scientName",

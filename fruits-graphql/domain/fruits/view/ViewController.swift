@@ -37,10 +37,6 @@ class ViewController: UIViewController {
     
         configureTableView()
         bindViewFruitsModel()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         viewModel.getFruits()
     }
     
@@ -57,8 +53,9 @@ class ViewController: UIViewController {
     }
     
     private func bindViewFruitsModel() {
+        
         viewModel
-            .fruits
+            .fruitInteractionSubject.fruits
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { fruitList in
                 self.fruits = fruitList

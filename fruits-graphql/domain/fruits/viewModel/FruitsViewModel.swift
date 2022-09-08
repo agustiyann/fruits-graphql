@@ -8,16 +8,23 @@
 import Foundation
 import RxSwift
 
+class FruitInteractionSubject {
+    static let shared = FruitInteractionSubject()
+    var fruits: PublishSubject<[FruitModel]> = PublishSubject()
+}
+
 class FruitsViewModel {
     
     private var fruitsUseCase: FruitsUseCase
-    var fruits: BehaviorSubject<[FruitModel]> = BehaviorSubject(value: [])
     var success: BehaviorSubject<String> = BehaviorSubject(value: "")
     var error: PublishSubject<Error?> = PublishSubject()
     var loading: PublishSubject<Bool> = PublishSubject()
+    var fruitInteractionSubject: FruitInteractionSubject
     
-    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared) {
+    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared,
+         fruitInteractionSubject: FruitInteractionSubject = FruitInteractionSubject.shared) {
         self.fruitsUseCase = fruitsUseCase
+        self.fruitInteractionSubject = fruitInteractionSubject
     }
     
     func getFruits() {
@@ -26,7 +33,7 @@ class FruitsViewModel {
             switch result {
             case .success(let response):
                 self.error.onNext(nil)
-                self.fruits.onNext(response)
+                self.fruitInteractionSubject.fruits.onNext(response)
             case .failure(let error):
                 self.error.onNext(error)
             }
