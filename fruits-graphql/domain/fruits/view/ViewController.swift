@@ -98,7 +98,6 @@ class ViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { message in
                 print(message)
-                self.viewModel.getFruits()
                 self.tableView.reloadData()
             })
             .disposed(by: disposeBag)
@@ -118,11 +117,9 @@ extension ViewController: UITableViewDataSource {
         
         cell.titleLabel.text = "\(data.name)"
         cell.actionBlock = {
-            print("delete button presed on \(indexPath.row+1)")
-            
-            let id = self.fruits[indexPath.row].id
+            let id = data.id
             self.viewModel.deleteFruit(id: id)
-            self.fruits.remove(at: indexPath.row)
+            self.viewModel.getFruits()
         }
         
         return cell
@@ -150,7 +147,6 @@ extension ViewController: UITableViewDelegate {
             
             self.viewModel.deleteFruit(id: id)
             self.fruits.remove(at: indexPath.row)
-            print("swiped")
             completionHandler(true)
         }
         action.image = UIImage(systemName: "trash.fill")
