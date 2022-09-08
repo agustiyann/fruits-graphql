@@ -10,6 +10,7 @@
 @testable import fruits_graphql
 import Apollo
 import Foundation
+import RxCocoa
 import RxSwift
 import Swift
 import UIKit

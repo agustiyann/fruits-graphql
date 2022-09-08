@@ -29,7 +29,6 @@ class FruitsViewModelTest: XCTestCase {
     }
     
     func testGetFruitsSuccess() {
-        let expectation = expectation(description: "Should return List FruitModel")
         let resultExpectation = MockFruitModelData.generateListData()
         
         self.fruitsViewModel
@@ -48,34 +47,28 @@ class FruitsViewModelTest: XCTestCase {
                 XCTAssertEqual(fruits, resultExpectation)
                 XCTAssertEqual(fruits.count, 2)
                 XCTAssertEqual(fruits.first?.id, resultExpectation[0].id)
-                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
         self.fruitsViewModel.getFruits()
-        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testGetFruitsFailed() {
         self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
-        let expectation = expectation(description: "Should return Error")
         
         self.fruitsViewModel
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 XCTAssertNotNil(error)
-                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
         self.fruitsViewModel.getFruits()
-        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testDeleteSuccess() {
         self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
-        let expectation = expectation(description: "Should return String: Success message")
         let resultExpectation = MockStringMessage.succesDelete
         
         self.fruitsViewModel
@@ -92,29 +85,24 @@ class FruitsViewModelTest: XCTestCase {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { message in
                 XCTAssertEqual(message, resultExpectation)
-                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
         self.fruitsViewModel.deleteFruit(id: "1")
-        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testDeleteFailed() {
         self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
-        let expectation = expectation(description: "Should return Error")
         
         self.fruitsViewModel
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 XCTAssertNotNil(error)
-                expectation.fulfill()
             })
             .disposed(by: disposeBag)
         
         self.fruitsViewModel.deleteFruit(id: "1")
-        waitForExpectations(timeout: 1, handler: nil)
     }
 
 }
