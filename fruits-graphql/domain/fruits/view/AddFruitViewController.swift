@@ -14,7 +14,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "ID"
         return tf
     }()
@@ -23,7 +23,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "scientificName"
         return tf
     }()
@@ -32,7 +32,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "treeName"
         return tf
     }()
@@ -41,7 +41,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "fruitName"
         return tf
     }()
@@ -50,7 +50,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "family"
         return tf
     }()
@@ -59,7 +59,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "origin"
         return tf
     }()
@@ -68,7 +68,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "desc"
         return tf
     }()
@@ -77,7 +77,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "bloom"
         return tf
     }()
@@ -86,7 +86,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "maturation"
         return tf
     }()
@@ -95,7 +95,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "lifeCycle"
         return tf
     }()
@@ -104,7 +104,7 @@ class AddFruitViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
-        tf.borderStyle = .line
+        tf.borderStyle = .roundedRect
         tf.placeholder = "climatic"
         return tf
     }()
@@ -112,10 +112,10 @@ class AddFruitViewController: UIViewController {
     private let saveButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         button.setTitle("Save", for: .normal)
         button.backgroundColor = .systemGreen
         button.tintColor = .white
+        button.layer.cornerRadius = 8
         return button
     }()
     
@@ -139,83 +139,13 @@ class AddFruitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Add Fruit"
 
-        // Do any additional setup after loading the view.
         configureUI()
+        bindViewModel()
     }
     
-    override func viewDidLayoutSubviews()
-      {
-          scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: 1000) // set height according you
-      }
-    
-    private func configureUI() {
-        view.addSubview(scrollView)
-        
-        let safeG = view.safeAreaLayoutGuide
-        
-        scrollView.leadingAnchor.constraint(equalTo: safeG.leadingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: safeG.topAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: safeG.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: safeG.bottomAnchor).isActive = true
-        
-        scrollView.addSubview(stackView)
-        scrollView.addSubview(saveButton)
-        
-        saveButton.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
-
-        [
-            idTextField,
-            scientificNameTextField,
-            treeNameTextField,
-            fruitNameTextField,
-            familyTextField,
-            originTextField,
-            descTextField,
-            bloomTextField,
-            maturationTextField,
-            lifeCycleTextField,
-            climaticTextField,
-        ].forEach { view in
-            stackView.addArrangedSubview(view)
-        }
-
-        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
-        
-        saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
-        saveButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20).isActive = true
-        saveButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20).isActive = true
-    }
-    
-    @objc private func savePressed() {
-        if let id = idTextField.text,
-           let scientName = scientificNameTextField.text,
-           let treeName = treeNameTextField.text,
-           let fruitName = fruitNameTextField.text,
-           let family = familyTextField.text,
-           let origin = originTextField.text,
-           let desc = descTextField.text,
-           let bloom = bloomTextField.text,
-           let maturation = maturationTextField.text,
-           let lifeCycle = lifeCycleTextField.text,
-           let climatic = climaticTextField.text {
-            viewModel.addFruit(
-                addFruitId: id,
-                scientificName: scientName,
-                treeName: treeName,
-                fruitName: fruitName,
-                family: family,
-                origin: origin,
-                description: desc,
-                bloom: bloom,
-                maturationFruit: maturation,
-                lifeCycle: lifeCycle,
-                climaticZone: climatic)
-        }
-        
+    private func bindViewModel() {
         viewModel
             .fruit
             .skip(1)
@@ -250,6 +180,78 @@ class AddFruitViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: 1000)
+    }
+    
+    private func configureUI() {
+        view.addSubview(scrollView)
+        
+        let safeG = view.safeAreaLayoutGuide
+        
+        scrollView.leadingAnchor.constraint(equalTo: safeG.leadingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: safeG.topAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: safeG.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: safeG.bottomAnchor).isActive = true
+        
+        scrollView.addSubview(stackView)
+        scrollView.addSubview(saveButton)
+        
+        saveButton.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
+
+        [
+            idTextField,
+            scientificNameTextField,
+            treeNameTextField,
+            fruitNameTextField,
+            familyTextField,
+            originTextField,
+            descTextField,
+            bloomTextField,
+            maturationTextField,
+            lifeCycleTextField,
+            climaticTextField,
+        ].forEach { view in
+            stackView.addArrangedSubview(view)
+        }
+
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        
+        saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
+        saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+    }
+    
+    @objc private func savePressed() {
+        if let id = idTextField.text,
+           let scientName = scientificNameTextField.text,
+           let treeName = treeNameTextField.text,
+           let fruitName = fruitNameTextField.text,
+           let family = familyTextField.text,
+           let origin = originTextField.text,
+           let desc = descTextField.text,
+           let bloom = bloomTextField.text,
+           let maturation = maturationTextField.text,
+           let lifeCycle = lifeCycleTextField.text,
+           let climatic = climaticTextField.text {
+            viewModel.addFruit(
+                addFruitId: id,
+                scientificName: scientName,
+                treeName: treeName,
+                fruitName: fruitName,
+                family: family,
+                origin: origin,
+                description: desc,
+                bloom: bloom,
+                maturationFruit: maturation,
+                lifeCycle: lifeCycle,
+                climaticZone: climatic)
+        }
     }
 
 }
