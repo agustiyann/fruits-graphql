@@ -13,7 +13,6 @@ class AddFruitViewController: UIViewController {
     private let idTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "ID"
         return tf
@@ -22,7 +21,6 @@ class AddFruitViewController: UIViewController {
     private let scientificNameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "scientificName"
         return tf
@@ -31,7 +29,6 @@ class AddFruitViewController: UIViewController {
     private let treeNameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "treeName"
         return tf
@@ -40,7 +37,6 @@ class AddFruitViewController: UIViewController {
     private let fruitNameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "fruitName"
         return tf
@@ -49,7 +45,6 @@ class AddFruitViewController: UIViewController {
     private let familyTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "family"
         return tf
@@ -58,7 +53,6 @@ class AddFruitViewController: UIViewController {
     private let originTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "origin"
         return tf
@@ -67,7 +61,6 @@ class AddFruitViewController: UIViewController {
     private let descTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "desc"
         return tf
@@ -76,7 +69,6 @@ class AddFruitViewController: UIViewController {
     private let bloomTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "bloom"
         return tf
@@ -85,7 +77,6 @@ class AddFruitViewController: UIViewController {
     private let maturationTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "maturation"
         return tf
@@ -94,7 +85,6 @@ class AddFruitViewController: UIViewController {
     private let lifeCycleTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "lifeCycle"
         return tf
@@ -103,7 +93,6 @@ class AddFruitViewController: UIViewController {
     private let climaticTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width - 40.0, height: 40.0)
         tf.borderStyle = .roundedRect
         tf.placeholder = "climatic"
         return tf
@@ -183,7 +172,7 @@ class AddFruitViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: 1000)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: stackView.frame.height)
     }
     
     private func configureUI() {
@@ -203,16 +192,16 @@ class AddFruitViewController: UIViewController {
 
         [
             idTextField,
-            scientificNameTextField,
-            treeNameTextField,
+//            scientificNameTextField,
+//            treeNameTextField,
             fruitNameTextField,
-            familyTextField,
-            originTextField,
-            descTextField,
-            bloomTextField,
-            maturationTextField,
-            lifeCycleTextField,
-            climaticTextField,
+//            familyTextField,
+//            originTextField,
+//            descTextField,
+//            bloomTextField,
+//            maturationTextField,
+//            lifeCycleTextField,
+//            climaticTextField,
         ].forEach { view in
             stackView.addArrangedSubview(view)
         }
@@ -220,11 +209,12 @@ class AddFruitViewController: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 84).isActive = true
         
         saveButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20).isActive = true
         saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     @objc private func savePressed() {
