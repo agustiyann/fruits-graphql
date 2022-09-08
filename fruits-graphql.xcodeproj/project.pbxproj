@@ -51,7 +51,6 @@
 		CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */; };
 		CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */; };
 		CFFE8C7528C74C30001F4729 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */; };
-		CFFE8C7628C74C30001F4729 /* FruitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFE8C7428C74C30001F4729 /* FruitTableViewCell.xib */; };
 		F0DEA7B041A3EC1015A8EB85 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */; };
 /* End PBXBuildFile section */
 
@@ -117,7 +116,6 @@
 		CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCaseImpl.swift; sourceTree = "<group>"; };
 		CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
 		CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
-		CFFE8C7428C74C30001F4729 /* FruitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +285,6 @@
 				CF2A066B28C7657200E4433F /* AddFruitViewController.swift */,
 				CF2EB84D28C5D66800548A5C /* ViewController.swift */,
 				CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */,
-				CFFE8C7428C74C30001F4729 /* FruitTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFE8C7628C74C30001F4729 /* FruitTableViewCell.xib in Resources */,
 				CF2EB88828C5DDDC00548A5C /* FruitList.graphql in Resources */,
 				CF2EB85628C5D66B00548A5C /* LaunchScreen.storyboard in Resources */,
 				CFDC806328C6E6F1009A351A /* FruitDetail.graphql in Resources */,

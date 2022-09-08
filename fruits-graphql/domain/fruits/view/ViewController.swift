@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UINib(nibName: "FruitTableViewCell", bundle: nil), forCellReuseIdentifier: "fruit-cell")
+        tableView.register(FruitTableViewCell.self, forCellReuseIdentifier: "fruit-cell")
         return tableView
     }()
     
@@ -115,7 +115,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fruit-cell", for: indexPath) as! FruitTableViewCell
         let data = fruits[indexPath.row]
         
-        cell.titleLabel.text = "\(data.name)"
+        cell.label.text = data.name
         cell.actionBlock = {
             let id = data.id
             self.viewModel.deleteFruit(id: id)
