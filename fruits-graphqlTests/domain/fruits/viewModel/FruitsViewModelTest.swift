@@ -30,7 +30,7 @@ class FruitsViewModelTest: XCTestCase {
     
     func testGetFruitsSuccess() {
         let expectation = expectation(description: "Should return List FruitModel")
-        let resultExpectation = [fruitModelMock]
+        let resultExpectation = MockFruitModelData.generateListData()
         
         self.fruitsViewModel
             .error
@@ -46,7 +46,7 @@ class FruitsViewModelTest: XCTestCase {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { fruits in
                 XCTAssertEqual(fruits, resultExpectation)
-                XCTAssertEqual(fruits.count, 1)
+                XCTAssertEqual(fruits.count, 2)
                 XCTAssertEqual(fruits.first?.id, resultExpectation[0].id)
                 expectation.fulfill()
             })
@@ -76,7 +76,7 @@ class FruitsViewModelTest: XCTestCase {
     func testDeleteSuccess() {
         self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
         let expectation = expectation(description: "Should return String: Success message")
-        let resultExpectation = succesDelete
+        let resultExpectation = MockStringMessage.succesDelete
         
         self.fruitsViewModel
             .error

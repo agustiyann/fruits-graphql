@@ -8,6 +8,18 @@
 import Foundation
 @testable import fruits_graphql
 
-let fruitModelMock = FruitModel(id: "1", name: "Aple")
 
-let succesDelete = "Fruit success deleted"
+struct MockFruitModelData {
+    static func generateSingleData() -> FruitModel {
+        return FruitModel(id: "1", name: "Aple")
+    }
+    
+    static func generateListData() -> [FruitModel] {
+        return [FruitModel(id: "1", name: "Apple"),
+                FruitModel(id: "2", name: "Orange")]
+    }
+}
+
+struct MockStringMessage {
+    static let succesDelete = "Fruit success deleted"
+}

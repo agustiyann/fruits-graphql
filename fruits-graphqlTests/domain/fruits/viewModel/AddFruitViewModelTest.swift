@@ -31,7 +31,7 @@ class AddFruitViewModelTest: XCTestCase {
     
     func testAddFruitSuccess() {
         let expectation = expectation(description: "Should return FruitModel")
-        let resultExpectation = fruitModelMock
+        let resultExpectation = MockFruitModelData.generateSingleData()
         
         self.addFruitViewModel
             .error

@@ -28,7 +28,7 @@ class FruitsUseCaseFactory {
     
     private func setupGetFruits() {
         given(self.fruitsUseCase.getFruits(completion: any())) ~> { completion in
-            completion(.success([fruitModelMock]))
+            completion(.success(MockFruitModelData.generateListData()))
         }
     }
     
@@ -40,7 +40,7 @@ class FruitsUseCaseFactory {
     
     private func deleteFruitSuccess() {
         given(self.fruitsUseCase.deleteFruit(id: any(), completion: any())) ~> { id, completion in
-            completion(.success(succesDelete))
+            completion(.success(MockStringMessage.succesDelete))
         }
     }
     
@@ -65,7 +65,7 @@ class FruitsUseCaseFactory {
             climaticZone: any(),
             completion: any())
         ) ~> { id, scName, tName, fName, family, origin, desc, bloom, maturation, lifeCycle, climatic, completion in
-            completion(.success(fruitModelMock))
+            completion(.success(MockFruitModelData.generateSingleData()))
         }
     }
     
