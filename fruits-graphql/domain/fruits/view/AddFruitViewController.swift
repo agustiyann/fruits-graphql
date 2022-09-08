@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class AddFruitViewController: UIViewController {
     
@@ -102,7 +103,7 @@ class AddFruitViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Save", for: .normal)
-        button.backgroundColor = .systemGreen
+        button.backgroundColor = .systemGray
         button.tintColor = .white
         button.layer.cornerRadius = 8
         return button
@@ -125,6 +126,8 @@ class AddFruitViewController: UIViewController {
     
     let viewModel = AddFruitViewModel()
     let disposeBag = DisposeBag()
+    
+    private var isValid = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,6 +135,7 @@ class AddFruitViewController: UIViewController {
 
         configureUI()
         bindViewModel()
+        setupRx()
     }
     
     private func bindViewModel() {
@@ -217,30 +221,67 @@ class AddFruitViewController: UIViewController {
         saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
+    private func setupRx() {
+        let idStream = idTextField.rx.text
+            .orEmpty
+            .skip(1)
+            .map { !$0.isEmpty }
+        
+        idStream.subscribe(
+            onNext: { value in
+                self.idTextField.rightViewMode = value ? .never : .always
+            }
+        ).disposed(by: disposeBag)
+        
+        let nameStream = fruitNameTextField.rx.text
+            .orEmpty
+            .skip(1)
+            .map { !$0.isEmpty }
+        
+        nameStream.subscribe(
+            onNext: { value in
+                self.fruitNameTextField.rightViewMode = value ? .never : .always
+            }
+        ).disposed(by: disposeBag)
+        
+        let invalidFieldsStream = Observable.combineLatest(
+            idStream,
+            nameStream
+        ) { id, name in
+            id && name
+        }
+        
+        invalidFieldsStream.subscribe(
+            onNext: { isValid in
+                if (isValid) {
+                    self.isValid = true
+                    self.saveButton.isEnabled = true
+                    self.saveButton.backgroundColor = UIColor.systemGreen
+                } else {
+                    self.isValid = false
+                    self.saveButton.isEnabled = false
+                    self.saveButton.backgroundColor = UIColor.systemGray
+                }
+            }
+        ).disposed(by: disposeBag)
+    }
+    
     @objc private func savePressed() {
-        if let id = idTextField.text,
-           let scientName = scientificNameTextField.text,
-           let treeName = treeNameTextField.text,
-           let fruitName = fruitNameTextField.text,
-           let family = familyTextField.text,
-           let origin = originTextField.text,
-           let desc = descTextField.text,
-           let bloom = bloomTextField.text,
-           let maturation = maturationTextField.text,
-           let lifeCycle = lifeCycleTextField.text,
-           let climatic = climaticTextField.text {
+        if let id = idTextField.text, let fruitName = fruitNameTextField.text, isValid  {
+            
+            
             viewModel.addFruit(
                 addFruitId: id,
-                scientificName: scientName,
-                treeName: treeName,
+                scientificName: "scientName",
+                treeName: "treeName",
                 fruitName: fruitName,
-                family: family,
-                origin: origin,
-                description: desc,
-                bloom: bloom,
-                maturationFruit: maturation,
-                lifeCycle: lifeCycle,
-                climaticZone: climatic)
+                family: "family",
+                origin: "origin",
+                description: "desc",
+                bloom: "bloom",
+                maturationFruit: "maturation",
+                lifeCycle: "lifeCycle",
+                climaticZone: "climatic")
         }
     }
 
