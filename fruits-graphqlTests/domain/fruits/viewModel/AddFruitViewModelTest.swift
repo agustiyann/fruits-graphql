@@ -41,6 +41,7 @@ class AddFruitViewModelTest: XCTestCase {
             .disposed(by: disposeBag)
         
         self.addFruitViewModel
+            .fruitInteractionSubject
             .fruit
             .skip(1)
             .observe(on: MainScheduler.instance)
