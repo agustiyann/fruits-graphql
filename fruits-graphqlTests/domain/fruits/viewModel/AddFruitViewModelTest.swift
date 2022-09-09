@@ -13,13 +13,13 @@ class AddFruitViewModelTest: XCTestCase {
     
     private var disposeBag: DisposeBag!
     private var fruitsUseCaseFactory: FruitsUseCaseFactory!
-    private var addFruitViewModel: AddFruitViewModel!
+    private var addFruitViewModel: FruitInteractionViewModel!
 
     override func setUp() {
         super.setUp()
         disposeBag = DisposeBag()
         fruitsUseCaseFactory = FruitsUseCaseFactory()
-        addFruitViewModel = AddFruitViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+        addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
     }
     
     override func tearDown() {
@@ -64,7 +64,7 @@ class AddFruitViewModelTest: XCTestCase {
     }
     
     func testAddFruitFailed() {
-        self.addFruitViewModel = AddFruitViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
         
         self.addFruitViewModel
             .error

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class FruitMapper {
     static let shared = FruitMapper()
@@ -22,5 +23,15 @@ class FruitMapper {
     
     func convertGraphqlFruitToFruitModel(fruit: FruitFragment) -> FruitModel {
         return FruitModel(id: fruit.id!, name: fruit.fruitName!)
+    }
+    
+    func setUpdateFruit(currentFruits: BehaviorSubject<[FruitModel]>, addedFruit: FruitModel) -> [FruitModel]? {
+        do {
+            var fruits = try currentFruits.value()
+            fruits.append(addedFruit)
+            return fruits
+        } catch {}
+        
+        return nil
     }
 }

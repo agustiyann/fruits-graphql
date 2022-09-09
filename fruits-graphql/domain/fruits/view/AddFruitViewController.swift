@@ -124,7 +124,7 @@ class AddFruitViewController: UIViewController {
         return scrollView
     }()
     
-    let viewModel = AddFruitViewModel()
+    let viewModel = FruitInteractionViewModel()
     let disposeBag = DisposeBag()
     var fruitViewModel = FruitsViewModel()
     
@@ -141,21 +141,10 @@ class AddFruitViewController: UIViewController {
     
     private func bindViewModel() {
         viewModel
-            .fruit
-            .skip(1)
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { fruit in
-                print("success adding \(String(describing: fruit?.name))")
-                self.fruitViewModel.getFruits()
-                self.navigationController?.popViewController(animated: true)
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel
             .loading
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { loading in
-                loading ? print("loading") : print("finish")
+                loading ? print("loading add") : print("finish add")
             })
             .disposed(by: disposeBag)
         
@@ -227,7 +216,7 @@ class AddFruitViewController: UIViewController {
         let idStream = idTextField.rx.text
             .orEmpty
             .skip(1)
-            .map { !$0.isEmpty }
+            .map ({ !$0.isEmpty })
         
         idStream.subscribe(
             onNext: { value in
@@ -282,6 +271,7 @@ class AddFruitViewController: UIViewController {
                 maturationFruit: "maturation",
                 lifeCycle: "lifeCycle",
                 climaticZone: "climatic")
+            self.navigationController?.popViewController(animated: true)
         }
     }
 

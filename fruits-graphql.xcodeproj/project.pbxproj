@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF1802A428C7B324004AF808 /* AddFruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */; };
+		CF1802A428C7B324004AF808 /* FruitInteractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1802A328C7B324004AF808 /* FruitInteractionViewModel.swift */; };
 		CF2A066628C7562900E4433F /* AddFruitParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066528C7562900E4433F /* AddFruitParameter.swift */; };
 		CF2A066C28C7657200E4433F /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066B28C7657200E4433F /* AddFruitViewController.swift */; };
 		CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84928C5D66800548A5C /* AppDelegate.swift */; };
@@ -73,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; path = "MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; sourceTree = "<group>"; };
-		CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewModel.swift; sourceTree = "<group>"; };
+		CF1802A328C7B324004AF808 /* FruitInteractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitInteractionViewModel.swift; sourceTree = "<group>"; };
 		CF2A066528C7562900E4433F /* AddFruitParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitParameter.swift; sourceTree = "<group>"; };
 		CF2A066B28C7657200E4433F /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
 		CF2EB84628C5D66800548A5C /* fruits-graphql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fruits-graphql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				CFBAB6E528C5FE6000DED95C /* FruitsViewModel.swift */,
-				CF1802A328C7B324004AF808 /* AddFruitViewModel.swift */,
+				CF1802A328C7B324004AF808 /* FruitInteractionViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -648,7 +648,7 @@
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
 				CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */,
-				CF1802A428C7B324004AF808 /* AddFruitViewModel.swift in Sources */,
+				CF1802A428C7B324004AF808 /* FruitInteractionViewModel.swift in Sources */,
 				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
 				CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */,
 				CF2EB88A28C5DEF600548A5C /* API.swift in Sources */,
