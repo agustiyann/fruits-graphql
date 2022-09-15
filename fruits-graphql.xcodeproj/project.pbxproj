@@ -13,7 +13,6 @@
 		CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84928C5D66800548A5C /* AppDelegate.swift */; };
 		CF2EB84C28C5D66800548A5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */; };
 		CF2EB84E28C5D66800548A5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB84D28C5D66800548A5C /* ViewController.swift */; };
-		CF2EB85128C5D66800548A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2EB84F28C5D66800548A5C /* Main.storyboard */; };
 		CF2EB85328C5D66B00548A5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2EB85228C5D66B00548A5C /* Assets.xcassets */; };
 		CF2EB85628C5D66B00548A5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2EB85428C5D66B00548A5C /* LaunchScreen.storyboard */; };
 		CF2EB86128C5D66B00548A5C /* fruits_graphqlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB86028C5D66B00548A5C /* fruits_graphqlTests.swift */; };
@@ -30,6 +29,10 @@
 		CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */; };
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
 		CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */; };
+		CF710D6B28D2FDC8007A9205 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF710D6A28D2FDC8007A9205 /* Storyboard.swift */; };
+		CF710D6D28D30007007A9205 /* Fruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF710D6C28D30007007A9205 /* Fruit.storyboard */; };
+		CF710D6F28D3035E007A9205 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF710D6E28D3035E007A9205 /* UINavigationController+Ext.swift */; };
+		CF710D7128D3059A007A9205 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF710D7028D3059A007A9205 /* Detail.storyboard */; };
 		CF9A869428C88727005A2439 /* FruitsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A869328C88727005A2439 /* FruitsViewModelTest.swift */; };
 		CF9A869528C88775005A2439 /* FruitsUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA382CA28C8850C00494CB6 /* FruitsUseCaseFactory.swift */; };
 		CF9A869728C8C380005A2439 /* AddFruitViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A869628C8C380005A2439 /* AddFruitViewModelTest.swift */; };
@@ -80,7 +83,6 @@
 		CF2EB84928C5D66800548A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CF2EB84D28C5D66800548A5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF2EB85028C5D66800548A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF2EB85228C5D66B00548A5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2EB85528C5D66B00548A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF2EB85728C5D66B00548A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +100,10 @@
 		CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsRepositoryImpl.swift; sourceTree = "<group>"; };
 		CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMapper.swift; sourceTree = "<group>"; };
 		CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
+		CF710D6A28D2FDC8007A9205 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		CF710D6C28D30007007A9205 /* Fruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fruit.storyboard; sourceTree = "<group>"; };
+		CF710D6E28D3035E007A9205 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		CF710D7028D3059A007A9205 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		CF9A869328C88727005A2439 /* FruitsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModelTest.swift; sourceTree = "<group>"; };
 		CF9A869628C8C380005A2439 /* AddFruitViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewModelTest.swift; sourceTree = "<group>"; };
 		CFA382C428C883DC00494CB6 /* FruitsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsHelper.swift; sourceTree = "<group>"; };
@@ -186,7 +192,6 @@
 				CF2EB88128C5D9DB00548A5C /* domain */,
 				CF2EB84928C5D66800548A5C /* AppDelegate.swift */,
 				CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */,
-				CF2EB84F28C5D66800548A5C /* Main.storyboard */,
 				CF2EB85228C5D66B00548A5C /* Assets.xcassets */,
 				CF2EB85428C5D66B00548A5C /* LaunchScreen.storyboard */,
 				CF2EB85728C5D66B00548A5C /* Info.plist */,
@@ -223,6 +228,7 @@
 		CF2EB88028C5D9CA00548A5C /* core */ = {
 			isa = PBXGroup;
 			children = (
+				CF710D6828D2FDAD007A9205 /* utilities */,
 				CF2EB88B28C5DF4D00548A5C /* network */,
 				CF2EB88428C5DB1600548A5C /* dataSource */,
 			);
@@ -257,6 +263,7 @@
 				CF2EB88F28C5E12E00548A5C /* model */,
 				CF2EB88628C5DDA200548A5C /* repository */,
 				CF2EB88E28C5E0FF00548A5C /* view */,
+				CF710D6C28D30007007A9205 /* Fruit.storyboard */,
 			);
 			path = fruits;
 			sourceTree = "<group>";
@@ -320,6 +327,15 @@
 				CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		CF710D6828D2FDAD007A9205 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF710D6A28D2FDC8007A9205 /* Storyboard.swift */,
+				CF710D6E28D3035E007A9205 /* UINavigationController+Ext.swift */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 		CF9A869028C885A9005A2439 /* viewModel */ = {
@@ -392,6 +408,7 @@
 				CFDC805828C6E18B009A351A /* mapper */,
 				CFDC805728C6E187009A351A /* model */,
 				CFDC805628C6E17E009A351A /* view */,
+				CF710D7028D3059A007A9205 /* Detail.storyboard */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -574,7 +591,8 @@
 				CF2EB85628C5D66B00548A5C /* LaunchScreen.storyboard in Resources */,
 				CFDC806328C6E6F1009A351A /* FruitDetail.graphql in Resources */,
 				CF2EB85328C5D66B00548A5C /* Assets.xcassets in Resources */,
-				CF2EB85128C5D66800548A5C /* Main.storyboard in Resources */,
+				CF710D7128D3059A007A9205 /* Detail.storyboard in Resources */,
+				CF710D6D28D30007007A9205 /* Fruit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,8 +656,10 @@
 			files = (
 				CF2EB84E28C5D66800548A5C /* ViewController.swift in Sources */,
 				CF2EB88D28C5DF5A00548A5C /* ApolloNetwork.swift in Sources */,
+				CF710D6F28D3035E007A9205 /* UINavigationController+Ext.swift in Sources */,
 				CF2EB84A28C5D66800548A5C /* AppDelegate.swift in Sources */,
 				CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */,
+				CF710D6B28D2FDC8007A9205 /* Storyboard.swift in Sources */,
 				CFDC806128C6E697009A351A /* FruitDetailMapper.swift in Sources */,
 				CFDC806728C6F1BE009A351A /* FruitDetailRepositoryImpl.swift in Sources */,
 				CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */,
@@ -703,14 +723,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF2EB84F28C5D66800548A5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF2EB85028C5D66800548A5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF2EB85428C5D66B00548A5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -849,7 +861,7 @@
 				INFOPLIST_FILE = "fruits-graphql/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Fruit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -880,7 +892,7 @@
 				INFOPLIST_FILE = "fruits-graphql/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Fruit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

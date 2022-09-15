@@ -41,8 +41,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func addTapped() {
-        let vc = AddFruitViewController()
-        self.navigationController?.pushViewController(vc, animated: false)
+        let vc = AddFruitViewController.instantiateFrom(storyboard: .fruit)
+        UINavigationController.dismissViewController()
+        UINavigationController.pushToRootViewController(vc, animated: true)
     }
 
     private func configureTableView() {
@@ -127,6 +128,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = FruitDetailViewController.instantiateFrom(storyboard: .detail)
+        vc.id = fruits[indexPath.row].id
+        UINavigationController.dismissViewController()
+        UINavigationController.pushToRootViewController(vc, animated: true)
     }
     
     func tableView(

@@ -16,12 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window?.windowScene = windowScene
-        window?.makeKeyAndVisible()
-        window?.backgroundColor = .systemBackground
 
-        let viewController = ViewController()
+        let viewController = ViewController.instantiateFrom(storyboard: .fruit)
         let navViewController = UINavigationController(rootViewController: viewController)
+        window?.overrideUserInterfaceStyle = .light
         window?.rootViewController = navViewController
+        window?.makeKeyAndVisible()
     }
 
 
