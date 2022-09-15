@@ -124,9 +124,8 @@ class AddFruitViewController: UIViewController {
         return scrollView
     }()
     
-    let viewModel = FruitInteractionViewModel()
+    var viewModel: FruitInteractionViewModel?
     let disposeBag = DisposeBag()
-    var fruitViewModel: FruitsViewModel?
     
     private var isValid = false
 
@@ -140,7 +139,7 @@ class AddFruitViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel
+        viewModel?
             .loading
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { loading in
@@ -148,7 +147,7 @@ class AddFruitViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
@@ -259,7 +258,7 @@ class AddFruitViewController: UIViewController {
     
     @objc private func savePressed() {
         if let id = idTextField.text, let fruitName = fruitNameTextField.text, isValid  {
-            viewModel.addFruit(
+            viewModel?.addFruit(
                 addFruitId: id,
                 scientificName: "scientName",
                 treeName: "treeName",

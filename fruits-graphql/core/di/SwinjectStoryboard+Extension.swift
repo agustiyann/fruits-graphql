@@ -11,6 +11,8 @@ import SwinjectStoryboard
  
 extension SwinjectStoryboard {
     @objc class func setup() {
+        
+        // MARK: - View Controller
         defaultContainer.register(FruitsUseCase.self) { _ in
             FruitsUseCaseImpl.shared
         }
@@ -25,8 +27,16 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(ViewController.self) { resolver, controller in
             controller.viewModel = resolver.resolve(FruitsViewModel.self)
         }
+        
+        // MARK: - Add Fruit View Controller
+        defaultContainer.register(FruitInteractionViewModel.self) { r in
+            let fruitUseCase = r.resolve(FruitsUseCase.self)!
+            let fruitInteraction = r.resolve(FruitInteractionSubject.self)!
+            return FruitInteractionViewModel(fruitsUseCase: fruitUseCase, fruitInteractionSubject: fruitInteraction)
+        }
+        
         defaultContainer.storyboardInitCompleted(AddFruitViewController.self) { resolver, controller in
-            controller.fruitViewModel = resolver.resolve(FruitsViewModel.self)
+            controller.viewModel = resolver.resolve(FruitInteractionViewModel.self)
         }
     }
 }

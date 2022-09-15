@@ -20,8 +20,8 @@ class FruitInteractionViewModel {
     var loading: PublishSubject<Bool> = PublishSubject()
     var fruitInteractionSubject: FruitInteractionSubject
     
-    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared,
-         fruitInteractionSubject: FruitInteractionSubject = FruitInteractionSubject.shared) {
+    init(fruitsUseCase: FruitsUseCase,
+         fruitInteractionSubject: FruitInteractionSubject) {
         self.fruitsUseCase = fruitsUseCase
         self.fruitInteractionSubject = fruitInteractionSubject
     }
