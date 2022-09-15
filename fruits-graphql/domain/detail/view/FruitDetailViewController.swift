@@ -31,7 +31,7 @@ class FruitDetailViewController: UIViewController {
         return label
     }()
     
-    private let viewModel = FruitDetailViewModel()
+    var viewModel: FruitDetailViewModel?
     var id: String = ""
     
     private let disposeBag = DisposeBag()
@@ -42,11 +42,11 @@ class FruitDetailViewController: UIViewController {
 
         configureUI()
         bindViewModel()
-        viewModel.getFruitByID(id: id)
+        viewModel?.getFruitByID(id: id)
     }
     
     private func bindViewModel() {
-        viewModel
+        viewModel?
             .fruit
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] fruit in
@@ -56,7 +56,7 @@ class FruitDetailViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .loading
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { loading in
@@ -64,7 +64,7 @@ class FruitDetailViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
