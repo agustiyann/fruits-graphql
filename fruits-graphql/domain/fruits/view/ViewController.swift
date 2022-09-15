@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    private let viewModel = FruitsViewModel()
+    var viewModel: FruitsViewModel?
     private let disposeBag = DisposeBag()
     
     private var fruits = [FruitModel]() {
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
         configureTableView()
         bindViewFruitsModel()
-        viewModel.getFruits()
+        viewModel?.getFruits()
     }
     
     @objc private func addTapped() {
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     
     private func bindViewFruitsModel() {
         
-        viewModel
+        viewModel?
             .fruits
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { fruitList in
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .loading
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { loading in
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .error
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel
+        viewModel?
             .success
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { message in
@@ -116,8 +116,8 @@ extension ViewController: UITableViewDataSource {
         cell.label.text = data.name
         cell.actionBlock = {
             let id = data.id
-            self.viewModel.deleteFruit(id: id)
-            self.viewModel.getFruits()
+            self.viewModel?.deleteFruit(id: id)
+            self.viewModel?.getFruits()
         }
         
         return cell
@@ -147,7 +147,7 @@ extension ViewController: UITableViewDelegate {
             action, view, completionHandler in
             let id = self.fruits[indexPath.row].id
             
-            self.viewModel.deleteFruit(id: id)
+            self.viewModel?.deleteFruit(id: id)
             self.fruits.remove(at: indexPath.row)
             completionHandler(true)
         }

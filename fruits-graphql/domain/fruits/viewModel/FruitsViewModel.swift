@@ -18,8 +18,8 @@ class FruitsViewModel {
     var fruitInteractionSubject: FruitInteractionSubject
     var disposeBag = DisposeBag()
     
-    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared,
-         fruitInteractionSubject: FruitInteractionSubject = FruitInteractionSubject.shared) {
+    init(fruitsUseCase: FruitsUseCase,
+         fruitInteractionSubject: FruitInteractionSubject) {
         self.fruitsUseCase = fruitsUseCase
         self.fruitInteractionSubject = fruitInteractionSubject
         self.observeFruitInteractionBinding()

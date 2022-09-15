@@ -55,6 +55,7 @@
 		CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */; };
 		CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */; };
 		CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */; };
+		CFDCD8AD28D37822006AE448 /* SwinjectStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDCD8AC28D37822006AE448 /* SwinjectStoryboard+Extension.swift */; };
 		CFFE8C7528C74C30001F4729 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */; };
 		F0DEA7B041A3EC1015A8EB85 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 		CFDC806828C6FE3C009A351A /* FruitDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCase.swift; sourceTree = "<group>"; };
 		CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCaseImpl.swift; sourceTree = "<group>"; };
 		CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
+		CFDCD8AC28D37822006AE448 /* SwinjectStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
 		E59C5FF7AC7999297290265D /* Pods-fruits-graphql.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql.release.xcconfig"; path = "Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql.release.xcconfig"; sourceTree = "<group>"; };
 		F6D5C7BF305A4EB11526B175 /* Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig"; path = "Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		CF2EB88028C5D9CA00548A5C /* core */ = {
 			isa = PBXGroup;
 			children = (
+				CFDCD8AB28D37806006AE448 /* di */,
 				CF710D6828D2FDAD007A9205 /* utilities */,
 				CF2EB88B28C5DF4D00548A5C /* network */,
 				CF2EB88428C5DB1600548A5C /* dataSource */,
@@ -502,6 +505,14 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
+		CFDCD8AB28D37806006AE448 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				CFDCD8AC28D37822006AE448 /* SwinjectStoryboard+Extension.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,7 +619,7 @@
 			);
 			mainGroup = CF2EB83D28C5D66700548A5C;
 			packageReferences = (
-				CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios.git" */,
+				CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				CFBAB6E728C5FF0B00DED95C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CF40764928C7A37D006A4BE0 /* XCRemoteSwiftPackageReference "TPKeyboardAvoiding" */,
 				CFA382BD28C8814C00494CB6 /* XCRemoteSwiftPackageReference "mockingbird" */,
@@ -805,6 +816,7 @@
 				CFDC806128C6E697009A351A /* FruitDetailMapper.swift in Sources */,
 				CFDC806728C6F1BE009A351A /* FruitDetailRepositoryImpl.swift in Sources */,
 				CFDC806928C6FE3C009A351A /* FruitDetailUseCase.swift in Sources */,
+				CFDCD8AD28D37822006AE448 /* SwinjectStoryboard+Extension.swift in Sources */,
 				CFDC805F28C6E26A009A351A /* FruitDetailModel.swift in Sources */,
 				CFBAB6E128C5FC6F00DED95C /* FruitsUseCase.swift in Sources */,
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
@@ -1175,7 +1187,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios.git" */ = {
+		CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
@@ -1212,12 +1224,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		CF2EB87A28C5D75C00548A5C /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios.git" */;
+			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
 		};
 		CF2EB87C28C5D75C00548A5C /* ApolloWebSocket */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios.git" */;
+			package = CF2EB87928C5D75C00548A5C /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
 		};
 		CFA382BE28C8814C00494CB6 /* Mockingbird */ = {
