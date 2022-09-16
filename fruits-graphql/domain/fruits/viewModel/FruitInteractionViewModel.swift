@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import DIKit
 
 class FruitInteractionSubject {
     static let shared = FruitInteractionSubject()
@@ -20,8 +21,8 @@ class FruitInteractionViewModel {
     var loading: PublishSubject<Bool> = PublishSubject()
     var fruitInteractionSubject: FruitInteractionSubject
     
-    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared,
-         fruitInteractionSubject: FruitInteractionSubject = FruitInteractionSubject.shared) {
+    init(fruitsUseCase: FruitsUseCase = resolve(),
+         fruitInteractionSubject: FruitInteractionSubject = resolve()) {
         self.fruitsUseCase = fruitsUseCase
         self.fruitInteractionSubject = fruitInteractionSubject
     }

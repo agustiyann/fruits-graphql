@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import DIKit
 
 class AddFruitViewController: UIViewController {
     
@@ -124,9 +125,8 @@ class AddFruitViewController: UIViewController {
         return scrollView
     }()
     
-    let viewModel = FruitInteractionViewModel()
+    @LazyInject var viewModel: FruitInteractionViewModel
     let disposeBag = DisposeBag()
-    var fruitViewModel = FruitsViewModel()
     
     private var isValid = false
 

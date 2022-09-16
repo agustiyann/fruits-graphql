@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import DIKit
 
 class FruitDetailViewModel {
     
@@ -17,7 +18,7 @@ class FruitDetailViewModel {
     
     private let disposeBag = DisposeBag()
     
-    init(fruitDetailUseCase: FruitDetailUseCase = FruitDetailUseCaseImpl.shared) {
+    init(fruitDetailUseCase: FruitDetailUseCase = resolve()) {
         self.fruitDetailUseCase = fruitDetailUseCase
     }
     

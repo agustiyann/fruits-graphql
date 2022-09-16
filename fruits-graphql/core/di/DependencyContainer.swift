@@ -26,4 +26,22 @@ public extension DependencyContainer {
             FruitsViewModel() as FruitsViewModel
         }
     }
+    
+    static var fruitInteractionViewModel = module {
+        single {
+            FruitInteractionViewModel() as FruitInteractionViewModel
+        }
+    }
+    
+    static var fruitDetailUseCase = module {
+        single {
+            FruitDetailUseCaseImpl.shared as FruitDetailUseCase
+        }
+    }
+    
+    static var fruitDetailViewModel = module {
+        single {
+            FruitDetailViewModel() as FruitDetailViewModel
+        }
+    }
 }

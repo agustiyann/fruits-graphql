@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DependencyContainer.fruitUseCase
             DependencyContainer.fruitInteractionSubject
             DependencyContainer.fruitViewModel
+            DependencyContainer.fruitInteractionViewModel
+            DependencyContainer.fruitDetailUseCase
+            DependencyContainer.fruitDetailViewModel
         })
     }
 
