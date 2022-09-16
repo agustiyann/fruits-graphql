@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import DIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    override init() {
+        super.init()
+        DependencyContainer.defined(by: modules {
+            DependencyContainer.fruitUseCase
+            DependencyContainer.fruitInteractionSubject
+            DependencyContainer.fruitViewModel
+        })
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import DIKit
 
 class FruitsViewModel {
     
@@ -18,8 +19,8 @@ class FruitsViewModel {
     var fruitInteractionSubject: FruitInteractionSubject
     var disposeBag = DisposeBag()
     
-    init(fruitsUseCase: FruitsUseCase = FruitsUseCaseImpl.shared,
-         fruitInteractionSubject: FruitInteractionSubject = FruitInteractionSubject.shared) {
+    init(fruitsUseCase: FruitsUseCase = resolve(),
+         fruitInteractionSubject: FruitInteractionSubject = resolve()) {
         self.fruitsUseCase = fruitsUseCase
         self.fruitInteractionSubject = fruitInteractionSubject
         self.observeFruitInteractionBinding()

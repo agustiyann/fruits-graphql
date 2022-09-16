@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19E4205B947EF555E960CD1F /* Pods_fruits_graphqlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371836B49147D7BE8BA0305C /* Pods_fruits_graphqlTests.framework */; };
+		40804DFB8A37BC50B3A86DC0 /* Pods_fruits_graphql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ECF9B140D4ED294E67B118 /* Pods_fruits_graphql.framework */; };
 		CF1802A428C7B324004AF808 /* FruitInteractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1802A328C7B324004AF808 /* FruitInteractionViewModel.swift */; };
 		CF2A066628C7562900E4433F /* AddFruitParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066528C7562900E4433F /* AddFruitParameter.swift */; };
 		CF2A066C28C7657200E4433F /* AddFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2A066B28C7657200E4433F /* AddFruitViewController.swift */; };
@@ -28,6 +30,7 @@
 		CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */; };
 		CF2EB89B28C5E9B900548A5C /* FruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */; };
 		CF2EB8A528C5FA4700548A5C /* BaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */; };
+		CF3B31FD28D42F20001BF067 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B31FC28D42F20001BF067 /* DependencyContainer.swift */; };
 		CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */ = {isa = PBXBuildFile; productRef = CF40764A28C7A37D006A4BE0 /* TPKeyboardAvoiding */; };
 		CF710D6B28D2FDC8007A9205 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF710D6A28D2FDC8007A9205 /* Storyboard.swift */; };
 		CF710D6D28D30007007A9205 /* Fruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF710D6C28D30007007A9205 /* Fruit.storyboard */; };
@@ -55,6 +58,7 @@
 		CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */; };
 		CFFE8C7528C74C30001F4729 /* FruitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */; };
 		F0DEA7B041A3EC1015A8EB85 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */; };
+		FF7F51C056EDB01B222DC6B8 /* Pods_fruits_graphql_fruits_graphqlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B12B92F96CF2AC4AF4DD86C /* Pods_fruits_graphql_fruits_graphqlUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +79,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061E923F1E36980758B3A990 /* Pods-fruits-graphql.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql.debug.xcconfig"; path = "Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql.debug.xcconfig"; sourceTree = "<group>"; };
+		141753D6AF35E3407B7E4D15 /* Pods-fruits-graphql-fruits-graphqlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql-fruits-graphqlUITests.release.xcconfig"; path = "Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests.release.xcconfig"; sourceTree = "<group>"; };
 		30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; path = "MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift"; sourceTree = "<group>"; };
+		371836B49147D7BE8BA0305C /* Pods_fruits_graphqlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fruits_graphqlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49109EC2EB3A665A0C3052A3 /* Pods-fruits-graphqlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphqlTests.release.xcconfig"; path = "Target Support Files/Pods-fruits-graphqlTests/Pods-fruits-graphqlTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E3DEAC2FCF1B4A47F2A98ED /* Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig"; path = "Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		678CB4AD1ABD561E5D180ED7 /* Pods-fruits-graphqlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphqlTests.debug.xcconfig"; path = "Target Support Files/Pods-fruits-graphqlTests/Pods-fruits-graphqlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B12B92F96CF2AC4AF4DD86C /* Pods_fruits_graphql_fruits_graphqlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fruits_graphql_fruits_graphqlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0ECF9B140D4ED294E67B118 /* Pods_fruits_graphql.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fruits_graphql.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1802A328C7B324004AF808 /* FruitInteractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitInteractionViewModel.swift; sourceTree = "<group>"; };
 		CF2A066528C7562900E4433F /* AddFruitParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitParameter.swift; sourceTree = "<group>"; };
 		CF2A066B28C7657200E4433F /* AddFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +112,7 @@
 		CF2EB89728C5E8E800548A5C /* FruitsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsRepositoryImpl.swift; sourceTree = "<group>"; };
 		CF2EB89A28C5E9B900548A5C /* FruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMapper.swift; sourceTree = "<group>"; };
 		CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorModel.swift; sourceTree = "<group>"; };
+		CF3B31FC28D42F20001BF067 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		CF710D6A28D2FDC8007A9205 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		CF710D6C28D30007007A9205 /* Fruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fruit.storyboard; sourceTree = "<group>"; };
 		CF710D6E28D3035E007A9205 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
@@ -122,6 +135,7 @@
 		CFDC806A28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailUseCaseImpl.swift; sourceTree = "<group>"; };
 		CFDC806C28C6FFA1009A351A /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
 		CFFE8C7328C74C30001F4729 /* FruitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTableViewCell.swift; sourceTree = "<group>"; };
+		E38EC908B719CF5AE409160C /* Pods-fruits-graphql.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fruits-graphql.release.xcconfig"; path = "Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +148,7 @@
 				CFBAB6EB28C5FF0C00DED95C /* RxSwift in Frameworks */,
 				CF2EB87D28C5D75C00548A5C /* ApolloWebSocket in Frameworks */,
 				CF40764B28C7A37D006A4BE0 /* TPKeyboardAvoiding in Frameworks */,
+				40804DFB8A37BC50B3A86DC0 /* Pods_fruits_graphql.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA382BF28C8814C00494CB6 /* Mockingbird in Frameworks */,
+				19E4205B947EF555E960CD1F /* Pods_fruits_graphqlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,18 +165,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7F51C056EDB01B222DC6B8 /* Pods_fruits_graphql_fruits_graphqlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54DD4CB6BE9EF4B700C92625 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				061E923F1E36980758B3A990 /* Pods-fruits-graphql.debug.xcconfig */,
+				E38EC908B719CF5AE409160C /* Pods-fruits-graphql.release.xcconfig */,
+				4E3DEAC2FCF1B4A47F2A98ED /* Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig */,
+				141753D6AF35E3407B7E4D15 /* Pods-fruits-graphql-fruits-graphqlUITests.release.xcconfig */,
+				678CB4AD1ABD561E5D180ED7 /* Pods-fruits-graphqlTests.debug.xcconfig */,
+				49109EC2EB3A665A0C3052A3 /* Pods-fruits-graphqlTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A2DFA57749D7BB38A1283A6 /* Generated Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				30BD6590B8D94F7CC098DEA8 /* fruits_graphqlTests-fruits_graphqlMocks.generated.swift */,
 			);
 			name = "Generated Mocks";
+			sourceTree = "<group>";
+		};
+		8DE8CF51AB82FB2DB37ED822 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0ECF9B140D4ED294E67B118 /* Pods_fruits_graphql.framework */,
+				8B12B92F96CF2AC4AF4DD86C /* Pods_fruits_graphql_fruits_graphqlUITests.framework */,
+				371836B49147D7BE8BA0305C /* Pods_fruits_graphqlTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF2EB83D28C5D66700548A5C = {
@@ -171,6 +211,8 @@
 				CF2EB86928C5D66B00548A5C /* fruits-graphqlUITests */,
 				CF2EB84728C5D66800548A5C /* Products */,
 				7A2DFA57749D7BB38A1283A6 /* Generated Mocks */,
+				54DD4CB6BE9EF4B700C92625 /* Pods */,
+				8DE8CF51AB82FB2DB37ED822 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,11 +229,11 @@
 		CF2EB84828C5D66800548A5C /* fruits-graphql */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EB84928C5D66800548A5C /* AppDelegate.swift */,
+				CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */,
 				CF2EB87F28C5D9BC00548A5C /* uikit */,
 				CF2EB88028C5D9CA00548A5C /* core */,
 				CF2EB88128C5D9DB00548A5C /* domain */,
-				CF2EB84928C5D66800548A5C /* AppDelegate.swift */,
-				CF2EB84B28C5D66800548A5C /* SceneDelegate.swift */,
 				CF2EB85228C5D66B00548A5C /* Assets.xcassets */,
 				CF2EB85428C5D66B00548A5C /* LaunchScreen.storyboard */,
 				CF2EB85728C5D66B00548A5C /* Info.plist */,
@@ -228,6 +270,7 @@
 		CF2EB88028C5D9CA00548A5C /* core */ = {
 			isa = PBXGroup;
 			children = (
+				CF3B31FB28D42F17001BF067 /* di */,
 				CF710D6828D2FDAD007A9205 /* utilities */,
 				CF2EB88B28C5DF4D00548A5C /* network */,
 				CF2EB88428C5DB1600548A5C /* dataSource */,
@@ -327,6 +370,14 @@
 				CF2EB8A428C5FA4700548A5C /* BaseErrorModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		CF3B31FB28D42F17001BF067 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				CF3B31FC28D42F20001BF067 /* DependencyContainer.swift */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 		CF710D6828D2FDAD007A9205 /* utilities */ = {
@@ -471,10 +522,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2EB87028C5D66B00548A5C /* Build configuration list for PBXNativeTarget "fruits-graphql" */;
 			buildPhases = (
+				3A54B922A8DDDF8EE51DD5A0 /* [CP] Check Pods Manifest.lock */,
 				CF2EB87E28C5D79600548A5C /* Apollo */,
 				CF2EB84228C5D66700548A5C /* Sources */,
 				CF2EB84328C5D66700548A5C /* Frameworks */,
 				CF2EB84428C5D66700548A5C /* Resources */,
+				06869B002CE70A847448FDD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -496,6 +549,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2EB87328C5D66B00548A5C /* Build configuration list for PBXNativeTarget "fruits-graphqlTests" */;
 			buildPhases = (
+				8A63FA86CDA2A74596BEB5D6 /* [CP] Check Pods Manifest.lock */,
 				552C8629F11C2059F972C028 /* Generate Mockingbird Mocks */,
 				CF2EB85828C5D66B00548A5C /* Sources */,
 				CF2EB85928C5D66B00548A5C /* Frameworks */,
@@ -518,9 +572,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2EB87628C5D66B00548A5C /* Build configuration list for PBXNativeTarget "fruits-graphqlUITests" */;
 			buildPhases = (
+				F184785CFBC3E913A6A4A2ED /* [CP] Check Pods Manifest.lock */,
 				CF2EB86228C5D66B00548A5C /* Sources */,
 				CF2EB86328C5D66B00548A5C /* Frameworks */,
 				CF2EB86428C5D66B00548A5C /* Resources */,
+				872D96297F06BE435C487C32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -613,6 +669,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06869B002CE70A847448FDD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql/Pods-fruits-graphql-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A54B922A8DDDF8EE51DD5A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fruits-graphql-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		552C8629F11C2059F972C028 /* Generate Mockingbird Mocks */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -628,6 +723,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -eu\n\n# Prevent Xcode 13 from running this script while indexing.\n[[ \"${ACTION}\" == \"indexbuild\" ]] && exit 0\n\n# Infer the derived data location from the build environment.\n[[ -z \"${DERIVED_DATA+x}\" ]] && DERIVED_DATA=\"$(echo \"${BUILD_ROOT}\" | sed -n 's|\\(.*\\)/Build/.*|\\1|p')\"\n\n\"${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird\" generate --targets \"fruits-graphql\" --outputs \"${SRCROOT}/MockingbirdMocks/fruits_graphqlTests-fruits_graphqlMocks.generated.swift\"";
+		};
+		872D96297F06BE435C487C32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fruits-graphql-fruits-graphqlUITests/Pods-fruits-graphql-fruits-graphqlUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A63FA86CDA2A74596BEB5D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fruits-graphqlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		CF2EB87E28C5D79600548A5C /* Apollo */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -646,6 +780,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"core/dataSource/schema.json\" core/dataSource/API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"http://localhost:9000/graphql\"\n";
+		};
+		F184785CFBC3E913A6A4A2ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fruits-graphql-fruits-graphqlUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -668,6 +824,7 @@
 				CF2EB89828C5E8E800548A5C /* FruitsRepositoryImpl.swift in Sources */,
 				CFBAB6E328C5FD4500DED95C /* FruitsUseCaseImpl.swift in Sources */,
 				CFDC806B28C6FE7A009A351A /* FruitDetailUseCaseImpl.swift in Sources */,
+				CF3B31FD28D42F20001BF067 /* DependencyContainer.swift in Sources */,
 				CF1802A428C7B324004AF808 /* FruitInteractionViewModel.swift in Sources */,
 				CFBAB6E628C5FE6000DED95C /* FruitsViewModel.swift in Sources */,
 				CFDC806D28C6FFA1009A351A /* FruitDetailViewModel.swift in Sources */,
@@ -850,6 +1007,7 @@
 		};
 		CF2EB87128C5D66B00548A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061E923F1E36980758B3A990 /* Pods-fruits-graphql.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -881,6 +1039,7 @@
 		};
 		CF2EB87228C5D66B00548A5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E38EC908B719CF5AE409160C /* Pods-fruits-graphql.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -911,6 +1070,7 @@
 		};
 		CF2EB87428C5D66B00548A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 678CB4AD1ABD561E5D180ED7 /* Pods-fruits-graphqlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -931,6 +1091,7 @@
 		};
 		CF2EB87528C5D66B00548A5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49109EC2EB3A665A0C3052A3 /* Pods-fruits-graphqlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -951,6 +1112,7 @@
 		};
 		CF2EB87728C5D66B00548A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E3DEAC2FCF1B4A47F2A98ED /* Pods-fruits-graphql-fruits-graphqlUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -969,6 +1131,7 @@
 		};
 		CF2EB87828C5D66B00548A5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141753D6AF35E3407B7E4D15 /* Pods-fruits-graphql-fruits-graphqlUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

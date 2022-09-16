@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import DIKit
 
 class ViewController: UIViewController {
     
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    private let viewModel = FruitsViewModel()
+    @LazyInject var viewModel: FruitsViewModel
     private let disposeBag = DisposeBag()
     
     private var fruits = [FruitModel]() {
