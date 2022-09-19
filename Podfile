@@ -6,8 +6,8 @@ target 'fruits-graphql' do
   use_frameworks!
 
   # Pods for fruits-graphql
-  pod 'Swinject', '2.6.0' 
-  pod 'SwinjectStoryboard' 
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
 
   target 'fruits-graphqlTests' do
     inherit! :search_paths
