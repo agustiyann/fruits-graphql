@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         let viewController = ViewController.instantiateFrom(storyboard: .fruit)
+        viewController.viewModel = Injection.init().provideFruitsViewModel()
         let navViewController = UINavigationController(rootViewController: viewController)
         window?.overrideUserInterfaceStyle = .light
         window?.rootViewController = navViewController

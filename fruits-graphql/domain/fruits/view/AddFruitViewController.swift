@@ -126,7 +126,6 @@ class AddFruitViewController: UIViewController {
     
     let viewModel = FruitInteractionViewModel()
     let disposeBag = DisposeBag()
-    var fruitViewModel = FruitsViewModel()
     
     private var isValid = false
 

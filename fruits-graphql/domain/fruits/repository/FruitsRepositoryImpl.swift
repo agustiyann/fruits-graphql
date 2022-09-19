@@ -7,17 +7,22 @@
 
 import Foundation
 
-class FruitsRepositoryImpl: FruitsRepository {
+final class FruitsRepositoryImpl: NSObject {
+    private var apolloClient: ApolloNetwork?
     
-    static let shared: FruitsRepository = FruitsRepositoryImpl()
-    private var apolloClient: ApolloNetwork
-    
-    init(apolloClient: ApolloNetwork = ApolloNetwork.shared) {
+    private init(apolloClient: ApolloNetwork?) {
         self.apolloClient = apolloClient
     }
     
+    static let shared: (ApolloNetwork?) -> FruitsRepository = { apolloClient in
+        return FruitsRepositoryImpl(apolloClient: apolloClient)
+    }
+}
+
+extension FruitsRepositoryImpl: FruitsRepository {
+    
     func getFruits(completion: @escaping (Result<[FruitModel], Error>) -> Void) {
-        self.apolloClient.apollo.fetch(query: FruitListQuery(), cachePolicy: .fetchIgnoringCacheData) { result in
+        self.apolloClient?.apollo.fetch(query: FruitListQuery(), cachePolicy: .fetchIgnoringCacheData) { result in
             switch result {
             case .success(let response):
                 if let data = response.data?.fruits {
@@ -46,7 +51,7 @@ class FruitsRepositoryImpl: FruitsRepository {
         climaticZone: String,
         completion: @escaping (Result<FruitModel, Error>) -> Void
     ) {
-        apolloClient.apollo.perform(mutation: AddFruitMutation(
+        apolloClient?.apollo.perform(mutation: AddFruitMutation(
             addFruitId: addFruitId,
             scientificName: scientificName,
             treeName: treeName,
@@ -75,7 +80,7 @@ class FruitsRepositoryImpl: FruitsRepository {
     }
     
     func deleteFruit(id: String, completion: @escaping (Result<String, Error>) -> Void) {
-        apolloClient.apollo.perform(mutation: DeleteFruitMutation(deleteFruitId: id)) { result in
+        apolloClient?.apollo.perform(mutation: DeleteFruitMutation(deleteFruitId: id)) { result in
             switch result {
             case .success(_):
                 completion(.success("Success delete fruit"))

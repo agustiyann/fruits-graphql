@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FruitsRepository {
+protocol FruitsRepository: AnyObject {
     func getFruits(completion: @escaping (Result<[FruitModel], Error>) -> Void)
     func addFruit(
         addFruitId: String,
