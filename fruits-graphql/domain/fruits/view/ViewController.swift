@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     
     @objc private func addTapped() {
         let vc = AddFruitViewController.instantiateFrom(storyboard: .fruit)
+        vc.viewModel = Injection.init().provideFruitInteractionViewModel()
         UINavigationController.dismissViewController()
         UINavigationController.pushToRootViewController(vc, animated: true)
     }
@@ -129,6 +130,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = FruitDetailViewController.instantiateFrom(storyboard: .detail)
+        vc.viewModel = Injection.init().provideDetailFruitViewModel()
         vc.id = fruits[indexPath.row].id
         UINavigationController.dismissViewController()
         UINavigationController.pushToRootViewController(vc, animated: true)

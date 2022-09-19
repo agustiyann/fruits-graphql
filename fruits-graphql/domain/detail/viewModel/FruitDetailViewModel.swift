@@ -17,7 +17,7 @@ class FruitDetailViewModel {
     
     private let disposeBag = DisposeBag()
     
-    init(fruitDetailUseCase: FruitDetailUseCase = FruitDetailUseCaseImpl.shared) {
+    init(fruitDetailUseCase: FruitDetailUseCase) {
         self.fruitDetailUseCase = fruitDetailUseCase
     }
     

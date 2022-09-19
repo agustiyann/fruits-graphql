@@ -27,4 +27,27 @@ final class Injection: NSObject {
         return FruitsViewModel(fruitsUseCase: fruitsUseCase, fruitInteractionSubject: fruitInteraction)
     }
     
+    func provideFruitInteractionViewModel() -> FruitInteractionViewModel {
+        let fruitUseCase = provideFruits()
+        let fruitInteraction = FruitInteractionSubject.shared
+        
+        return FruitInteractionViewModel(fruitsUseCase: fruitUseCase, fruitInteractionSubject: fruitInteraction)
+    }
+    
+    func provideDetailFruitRepository() -> FruitDetailRepository {
+        let apolloClient: ApolloNetwork = ApolloNetwork.shared
+        
+        return FruitDetailRepositoryImpl.shared(apolloClient)
+    }
+    
+    func provideFruitDetailUseCase() -> FruitDetailUseCase {
+        let fruitDetailRepository = provideDetailFruitRepository()
+        return FruitDetailUseCaseImpl.shared(fruitDetailRepository)
+    }
+    
+    func provideDetailFruitViewModel() -> FruitDetailViewModel {
+        let detailUseCase = provideFruitDetailUseCase()
+        return FruitDetailViewModel(fruitDetailUseCase: detailUseCase)
+    }
+    
 }

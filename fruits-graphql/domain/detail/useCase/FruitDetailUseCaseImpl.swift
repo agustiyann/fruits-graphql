@@ -7,17 +7,23 @@
 
 import Foundation
 
-class FruitDetailUseCaseImpl: FruitDetailUseCase {
+final class FruitDetailUseCaseImpl: NSObject {
     
-    static let shared = FruitDetailUseCaseImpl()
-    private var fruitDetailRepository: FruitDetailRepository
+    private var fruitDetailRepository: FruitDetailRepository?
     
-    init(fruitDetailRepository: FruitDetailRepository = FruitDetailRepositoryImpl.shared) {
+    private init(fruitDetailRepository: FruitDetailRepository?) {
         self.fruitDetailRepository = fruitDetailRepository
     }
     
+    static let shared: (FruitDetailRepository?) -> FruitDetailUseCaseImpl = { fruitDetailRepository in
+        return FruitDetailUseCaseImpl(fruitDetailRepository: fruitDetailRepository)
+    }
+}
+
+extension FruitDetailUseCaseImpl: FruitDetailUseCase {
+    
     func getFruitDetail(id: String, completion: @escaping (Result<FruitDetailModel, Error>) -> Void) {
-        fruitDetailRepository.getFruitDetail(id: id, completion: completion)
+        fruitDetailRepository?.getFruitDetail(id: id, completion: completion)
     }
     
 }

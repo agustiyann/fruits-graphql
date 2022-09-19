@@ -7,20 +7,26 @@
 
 import Foundation
 
-class FruitDetailRepositoryImpl: FruitDetailRepository {
+final class FruitDetailRepositoryImpl: NSObject {
     
-    static let shared = FruitDetailRepositoryImpl()
-    private var apolloService: ApolloNetwork
+    private var apolloService: ApolloNetwork?
     
-    init(apolloService: ApolloNetwork = ApolloNetwork.shared) {
+    init(apolloService: ApolloNetwork?) {
         self.apolloService = apolloService
     }
+    
+    static let shared: (ApolloNetwork?) -> FruitDetailRepository = { apolloService in
+        return FruitDetailRepositoryImpl(apolloService: apolloService)
+    }
+}
+
+extension FruitDetailRepositoryImpl: FruitDetailRepository {
     
     func getFruitDetail(
         id: String,
         completion: @escaping (Result<FruitDetailModel, Error>) -> Void
     ) {
-        apolloService.apollo.fetch(
+        apolloService?.apollo.fetch(
             query: FruitDetailQuery(fruitId: id),
             cachePolicy: .fetchIgnoringCacheData
         ) { result in
