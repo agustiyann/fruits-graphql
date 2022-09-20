@@ -26,28 +26,6 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-    
-    // Container untuk detail xib
-    let container: Container = {
-        let container = Container()
-        
-        container.register(FruitDetailUseCase.self) { _ in
-            FruitDetailUseCaseImpl.shared
-        }
-        
-        container.register(FruitDetailViewModel.self) { r in
-            let useCase = r.resolve(FruitDetailUseCase.self)!
-            return FruitDetailViewModel(fruitDetailUseCase: useCase)
-        }
-        
-        container.register(DetailFruitXibViewController.self) { r in
-            let detailVc = DetailFruitXibViewController()
-            detailVc.viewModel = r.resolve(FruitDetailViewModel.self)
-            return detailVc
-        }
-        
-        return container
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +123,7 @@ extension ViewController: UITableViewDataSource {
         
         cell.actionDetail = {
             let id = data.id
-            let vc = self.container.resolve(DetailFruitXibViewController.self)
+            let vc = Container.sharedContainer.resolve(DetailFruitXibViewController.self)
             vc?.id = id
             self.navigationController?.pushViewController(vc!, animated: true)
         }
