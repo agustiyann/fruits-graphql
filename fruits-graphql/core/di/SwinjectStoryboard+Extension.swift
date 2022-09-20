@@ -56,5 +56,11 @@ extension SwinjectStoryboard {
             controller.viewModel = resolver.resolve(FruitDetailViewModel.self)
         }
         
+        // MARK: - Detail XIB
+        // Tidak bisa dipakai
+        defaultContainer.storyboardInitCompleted(DetailFruitXibViewController.self) { resolver, controller in
+            controller.viewModel = resolver.resolve(FruitDetailViewModel.self)
+        }
+        
     }
 }
