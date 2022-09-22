@@ -13,6 +13,8 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Swift
+import Swinject
+import SwinjectStoryboard
 import UIKit
 
 private let mkbGenericStaticMockContext = Mockingbird.GenericStaticMockContext()

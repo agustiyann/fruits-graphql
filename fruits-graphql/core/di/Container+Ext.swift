@@ -28,6 +28,21 @@ extension Container {
             return detailVc
         }
         
+        // Fruit View Model
+        container.register(FruitsUseCase.self) { _ in
+            FruitsUseCaseImpl.shared
+        }
+        
+        container.register(FruitInteractionSubject.self) { _ in
+            FruitInteractionSubject.shared
+        }
+        
+        container.register(FruitsViewModel.self) { r in
+            let fruitUseCase = r.resolve(FruitsUseCase.self)!
+            let fruitInteraction = r.resolve(FruitInteractionSubject.self)!
+            return FruitsViewModel(fruitsUseCase: fruitUseCase, fruitInteractionSubject: fruitInteraction)
+        }
+        
         return container
     }()
     

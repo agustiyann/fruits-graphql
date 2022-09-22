@@ -7,6 +7,7 @@
 
 import XCTest
 import RxSwift
+import Swinject
 @testable import fruits_graphql
 
 class AddFruitViewModelTest: XCTestCase {
@@ -14,12 +15,14 @@ class AddFruitViewModelTest: XCTestCase {
     private var disposeBag: DisposeBag!
     private var fruitsUseCaseFactory: FruitsUseCaseFactory!
     private var addFruitViewModel: FruitInteractionViewModel!
+    private var fruitInteractionSubject: FruitInteractionSubject!
 
     override func setUp() {
         super.setUp()
         disposeBag = DisposeBag()
         fruitsUseCaseFactory = FruitsUseCaseFactory()
-        addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+        fruitInteractionSubject = Container.sharedContainer.resolve(FruitInteractionSubject.self)!
+        addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance(), fruitInteractionSubject: fruitInteractionSubject)
     }
     
     override func tearDown() {
@@ -65,7 +68,7 @@ class AddFruitViewModelTest: XCTestCase {
     }
     
     func testAddFruitFailed() {
-        self.addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.addFruitViewModel = FruitInteractionViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed(), fruitInteractionSubject: fruitInteractionSubject)
         
         self.addFruitViewModel
             .error

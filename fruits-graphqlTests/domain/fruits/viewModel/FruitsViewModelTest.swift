@@ -7,18 +7,21 @@
 
 import XCTest
 import RxSwift
+import Swinject
 @testable import fruits_graphql
 
 class FruitsViewModelTest: XCTestCase {
     private var disposeBag: DisposeBag!
     private var fruitsUseCaseFactory: FruitsUseCaseFactory!
     private var fruitsViewModel: FruitsViewModel!
+    private var fruitInteractionSubject: FruitInteractionSubject!
 
     override func setUp() {
         super.setUp()
         disposeBag = DisposeBag()
         fruitsUseCaseFactory = FruitsUseCaseFactory()
-        fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+        fruitInteractionSubject = Container.sharedContainer.resolve(FruitInteractionSubject.self)!
+        fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance(), fruitInteractionSubject: fruitInteractionSubject)
     }
     
     override func tearDown() {
@@ -54,7 +57,7 @@ class FruitsViewModelTest: XCTestCase {
     }
     
     func testGetFruitsFailed() {
-        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed(), fruitInteractionSubject: fruitInteractionSubject)
         
         self.fruitsViewModel
             .error
@@ -68,7 +71,7 @@ class FruitsViewModelTest: XCTestCase {
     }
     
     func testDeleteSuccess() {
-        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance())
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstance(), fruitInteractionSubject: fruitInteractionSubject)
         let resultExpectation = MockStringMessage.succesDelete
         
         self.fruitsViewModel
@@ -92,7 +95,7 @@ class FruitsViewModelTest: XCTestCase {
     }
     
     func testDeleteFailed() {
-        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed())
+        self.fruitsViewModel = FruitsViewModel(fruitsUseCase: fruitsUseCaseFactory.createInstanceFailed(), fruitInteractionSubject: fruitInteractionSubject)
         
         self.fruitsViewModel
             .error
